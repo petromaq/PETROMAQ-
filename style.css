@@ -1,0 +1,236 @@
+/* === CONFIGURACIÓN GENERAL === */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+}
+
+/* === BARRA SUPERIOR === */
+.topbar {
+  background-color: #f4b221;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 2px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  height: 80px;
+}
+
+.logo img {
+  height: 140px;
+  object-fit: contain;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-items a {
+  color: #1f1f1f;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-items a:hover {
+  color: #ff9900;
+}
+
+/* === MARCAS REPRESENTADAS === */
+.distribuidor-bar {
+  background-color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 2px solid #ddd;
+}
+
+.distribuidor-bar .texto {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.logos-marcas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.logos-marcas img {
+  height: 200px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos-marcas img:hover {
+  transform: scale(1.1);
+}
+
+/* === SECCIONES GENERALES === */
+section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  font-size: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+/* === HERO CON CARRUSEL === */
+.hero {
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.carrusel-fondo {
+  position: absolute;
+  display: flex;
+  width: 400%;
+  height: 100%;
+  animation: mover-carrusel 40s infinite linear;
+  top: 0;
+  left: 0;
+}
+
+.carrusel-fondo img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes mover-carrusel {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-100vw); }
+  50%  { transform: translateX(-200vw); }
+  75%  { transform: translateX(-300vw); }
+  100% { transform: translateX(0); }
+}
+
+.hero-overlay {
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  text-align: center;
+}
+
+.hero-overlay h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.hero-overlay p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* === BOTÓN LLAMADO A LA ACCIÓN === */
+.boton {
+  background-color: #ff9900;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #cc7a00;
+}
+
+/* === FOOTER === */
+footer {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .nav-items {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero-overlay {
+    padding: 20px;
+  }
+
+  .hero-overlay h2 {
+    font-size: 28px;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+  }
+
+  .boton {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .logos-marcas {
+    gap: 20px;
+  }
+
+  .logos-marcas img {
+    height: 40px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+}
