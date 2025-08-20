@@ -105,7 +105,7 @@
   <section id="contacto">
     <h2>Contacto</h2>
     <p>📍 Av. Virgen de Cotoca 7mo Anillo, Pampa de la Isla (Cerca del Banco Sol) - Santa Cruz, Bolivia
-      <a href="https://maps.app.goo.gl/5sAGFv1X8zZ7gHzA9" target="_blank" rel="noopener">👉 Ver Ubicación</a>
+      <a href="https://maps.app.goo.gl/5sAGFv1X8zZ7gHzA9" target="_blank" rel="noopener" data-placement="maps">👉 Ver Ubicación</a>
     </p>
     <p>📞 WhatsApp:
       <a href="https://wa.me/59174666430" target="_blank" rel="noopener" data-placement="footer">+591 74666430</a>
@@ -120,10 +120,11 @@
     <p>&copy; 2025 PETROMAQ. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Tracking de clics a WhatsApp -->
+  <!-- Tracking de clics (WhatsApp + Ubicación) -->
   <script>
   document.addEventListener('DOMContentLoaded', function () {
     try {
+      // ---- WhatsApp (evento estándar + personalizado) ----
       var waLinks = Array.prototype.slice.call(
         document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]')
       );
@@ -133,19 +134,46 @@
           var phoneMatch = href.match(/wa\.me\/(\d+)/) || href.match(/phone=(\d+)/);
           var phone = phoneMatch ? phoneMatch[1] : 'unknown';
           var placement = link.dataset.placement || 'unknown';
-          fbq && fbq('trackCustom','WhatsAppClick', {
-            phone: phone,
-            placement: placement,
-            page: window.location.pathname
-          });
+
+          if (typeof fbq === 'function') {
+            // Evento estándar (sirve para optimizar campañas)
+            fbq('track','Contact');
+            // Evento personalizado (métricas detalladas)
+            fbq('trackCustom','WhatsAppClick', {
+              phone: phone,
+              placement: placement,
+              page: window.location.pathname
+            });
+          }
         });
       });
+
+      // ---- Ver Ubicación (Google Maps) ----
+      var mapLinks = Array.prototype.slice.call(
+        document.querySelectorAll('a[href*="maps.app.goo.gl"], a[href*="google.com/maps"]')
+      );
+      mapLinks.forEach(function(link){
+        link.addEventListener('click', function(){
+          var placement = link.dataset.placement || 'maps';
+          if (typeof fbq === 'function') {
+            // Evento estándar recomendado por Meta para esto
+            fbq('track','FindLocation');
+            // Personalizado para análisis
+            fbq('trackCustom','MapClick', {
+              placement: placement,
+              page: window.location.pathname
+            });
+          }
+        });
+      });
+
     } catch(e) {
-      // Silencio errores para no romper la UI
+      // Silenciar errores para no afectar la UI
     }
   });
   </script>
 </body>
 </html>
+
 
 
