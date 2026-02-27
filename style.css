@@ -121,7 +121,7 @@ ul li {
   display: flex;
   width: 400%;
   height: 100%;
-  animation: mover-carrusel 40s infinite linear;
+  animation: mover-carrusel 30s infinite linear;
   top: 0;
   left: 0;
 }
