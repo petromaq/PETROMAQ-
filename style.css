@@ -722,3 +722,126 @@ footer .logoPetromaq {
     right: 14px !important;
   }
 }
+/* =========================================
+   PORTADA PETROMAQ — CORRECCIÓN DEFINITIVA
+========================================= */
+
+.heroGrid {
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr !important;
+  grid-auto-rows: 1fr !important;
+  align-items: stretch !important;
+  min-height: 600px !important;
+}
+
+.heroCopy {
+  min-height: 600px !important;
+}
+
+.heroVisual {
+  position: relative !important;
+  align-self: stretch !important;
+
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 600px !important;
+  max-height: none !important;
+
+  overflow: hidden !important;
+  background: #d8d2c5 !important;
+}
+
+.heroImage {
+  position: absolute !important;
+  inset: 0 !important;
+
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 0 !important;
+  max-height: none !important;
+
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Elimina cualquier portada antigua puesta como fondo */
+.heroVisual {
+  background-image: none !important;
+}
+
+/* Trama muy suave sobre la fotografía */
+.heroVisual::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+
+  background:
+    linear-gradient(
+      rgba(243, 178, 34, 0.04),
+      rgba(23, 23, 20, 0.08)
+    ) !important;
+}
+
+/* Ocultar dibujos antiguos */
+.heroVisual .machine,
+.heroVisual .filter,
+.heroVisual .oil {
+  display: none !important;
+}
+
+/* Cobertura nacional */
+.heroVisual .coverage {
+  position: absolute !important;
+  top: 28px !important;
+  right: 28px !important;
+  z-index: 3 !important;
+
+  padding: 12px 16px !important;
+  border-left: 4px solid #171714 !important;
+  background: rgba(243, 178, 34, 0.94) !important;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+
+  .heroGrid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    min-height: 0 !important;
+  }
+
+  .heroCopy {
+    min-height: 0 !important;
+  }
+
+  .heroVisual {
+    height: 500px !important;
+    min-height: 500px !important;
+  }
+
+  .heroImage {
+    object-position: center center !important;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+  .heroVisual {
+    height: 420px !important;
+    min-height: 420px !important;
+  }
+
+  .heroImage {
+    object-position: 58% center !important;
+  }
+
+  .heroVisual .coverage {
+    top: 16px !important;
+    right: 14px !important;
+  }
+}
