@@ -845,3 +845,68 @@ footer .logoPetromaq {
     right: 14px !important;
   }
 }
+/* ARREGLO DEFINITIVO: PORTADA A LA MISMA ALTURA DEL TEXTO */
+
+.heroGrid {
+  display: grid !important;
+  grid-template-columns: 1.05fr 0.95fr !important;
+  align-items: stretch !important;
+}
+
+.heroVisual {
+  position: relative !important;
+  align-self: stretch !important;
+
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+
+  overflow: hidden !important;
+  background-image: none !important;
+}
+
+.heroImage {
+  position: absolute !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  min-height: 0 !important;
+  max-height: none !important;
+
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+/* Mantener la etiqueta encima */
+.heroVisual .coverage {
+  position: absolute !important;
+  top: 28px !important;
+  right: 28px !important;
+  z-index: 5 !important;
+}
+
+/* CELULAR */
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroVisual {
+    height: 480px !important;
+    min-height: 480px !important;
+  }
+
+  .heroImage {
+    object-position: 58% center !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroVisual {
+    height: 400px !important;
+    min-height: 400px !important;
+  }
+}
