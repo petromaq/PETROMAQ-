@@ -1,190 +1,956 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>PETROMAQ – Filtros, Grasas y Lubricantes</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);
-  t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
-  (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1479268196436527');
-  fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-         src="https://www.facebook.com/tr?id=1479268196436527&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    PETROMAQ | Filtros, grasas y lubricantes en Bolivia
+  </title>
+
+  <meta
+    name="description"
+    content="Importadora de filtros, grasas y lubricantes para transporte pesado, maquinaria, agro, minería e industria. Envíos a toda Bolivia."
+  >
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
+
 <body>
-  <!-- BARRA SUPERIOR AMARILLA CON LOGO E ICONOS -->
+
+<main>
+
+  <!-- ================================================
+       BARRA SUPERIOR
+  ================================================= -->
+
   <div class="topbar">
-    <div class="logo">
-      <img src="logo.png" alt="PETROMAQ">
-    </div>
-    <div class="nav-items">
-      <a href="https://www.facebook.com//share/19n8ysntaJ/?mibextid=wwXIfr" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/petromaq.bolivia?igsh=aDFjN2pvNG01MXJw" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@petromaq.bolivia?_t=ZM-8y8lB0ARtfp&_r=1" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
-    </div>
+    <span>Importadores directos</span>
+    <span>Envíos a toda Bolivia</span>
+    <span>LUN–SÁB 08:00–18:00 · HORARIO CONTINUO</span>
   </div>
 
-  <!-- MARCAS REPRESENTADAS -->
-  <section class="distribuidor-bar">
-    <p class="texto">Distribuidor autorizado para Bolivia:</p>
-    <div class="logos-marcas">
-      <img src="turbo.png" alt="Turbo">
-      <img src="MAQ FIL.png" alt="MAQFIL">
-      <img src="lyss.png" alt="Lyss">
-      <img src="donaldson.png" alt="Donaldson">
-      <img src="parker.png" alt="Parker Racor">
+
+  <!-- ================================================
+       CABECERA
+  ================================================= -->
+
+  <header class="header">
+
+    <a class="brand" href="#inicio">
+      <img
+        class="logoPetromaq"
+        src="imagenes/logo-petromaq.png"
+        alt="PETROMAQ"
+      >
+    </a>
+
+
+    <nav>
+      <a href="#catalogo">Productos</a>
+      <a href="#marcas">Marcas</a>
+      <a href="#empresa">Empresa</a>
+      <a href="#clientes">Clientes</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+
+    <a
+      class="headerCta"
+      href="https://wa.me/59171644088"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Cotizar por WhatsApp
+      <span>↗</span>
+    </a>
+
+  </header>
+
+
+  <!-- ================================================
+       PORTADA
+  ================================================= -->
+
+  <section class="hero" id="inicio">
+
+    <div class="heroGrid">
+
+      <div class="heroCopy">
+
+        <span class="eyebrow">
+          <i></i>
+          SANTA CRUZ · BOLIVIA
+        </span>
+
+
+        <h1>
+          Rendimiento que<br>
+          <em>no se detiene.</em>
+        </h1>
+
+
+        <p>
+          Filtros, grasas y lubricantes para transporte pesado,
+          maquinaria, agro, minería e industria.
+        </p>
+
+
+        <form class="search" id="searchForm">
+
+          <label for="filter-search">
+            Buscá tu filtro
+          </label>
+
+
+          <div>
+            <span>⌕</span>
+
+            <input
+              id="filter-search"
+              type="search"
+              placeholder="Código, marca, modelo o aplicación"
+              autocomplete="off"
+            >
+
+            <button type="submit">
+              Buscar
+              <b>→</b>
+            </button>
+          </div>
+
+
+          <small>
+            Ejemplo: Volvo FH, Racor 900, filtro hidráulico…
+          </small>
+
+        </form>
+
+
+        <div class="heroLinks">
+
+          <a href="#catalogo">
+            Ver catálogo
+            <span>↓</span>
+          </a>
+
+          <a
+            href="https://wa.me/59171644088"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hablar con un asesor
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="heroVisual">
+
+        <div class="machine">
+          <span class="wheel w1"></span>
+          <span class="wheel w2"></span>
+          <span class="cab"></span>
+          <span class="boom"></span>
+          <span class="bucket"></span>
+        </div>
+
+        <div class="filter f1">
+          <span></span>
+        </div>
+
+        <div class="filter f2">
+          <span></span>
+        </div>
+
+        <div class="oil">
+          <span>
+            PETRO<br>
+            <b>MAQ</b>
+          </span>
+        </div>
+
+
+        <div class="coverage">
+          <b>COBERTURA</b>
+          <strong>NACIONAL</strong>
+          <span>Despachos a los 9 departamentos</span>
+        </div>
+
+      </div>
+
     </div>
-  </section>
 
-  <!-- HERO DE ENTRADA CON CARRUSEL DE FONDO -->
-  <section class="hero">
-    <div class="carrusel-fondo">
-      <img src="fachada 1.png" alt="Fachada de la Central">
-      <img src="fachada 2.png" alt="Fachada de cotoca">
-      <img src="CLIENTES.png" alt="CLIENTES felices">
-      <img src="clientes2.png" alt="Clientes felices2">
-      <img src="ipiranga 25w50 post.png" alt="Aceite 25W50">
+
+    <div class="trust">
+      <span>ATENCIÓN A</span>
+      <b>FLOTAS</b>
+      <b>EMPRESAS</b>
+      <b>TALLERES</b>
+      <b>PARTICULARES</b>
     </div>
-    <div class="hero-overlay">
-      <h2>Productos que mueven tu motor</h2>
-      <p>Filtros, grasas y lubricantes diseñados para resistir las condiciones más exigentes.</p>
-      <a href="#contacto" class="boton" data-placement="hero">Contáctanos ahora</a>
+
+  </section>
+
+
+  <!-- ================================================
+       CATÁLOGO
+  ================================================= -->
+
+  <section
+    class="section products"
+    id="catalogo"
+  >
+
+    <div class="sectionHead">
+
+      <div>
+        <span class="kicker">
+          CATÁLOGO PETROMAQ
+        </span>
+
+        <h2>
+          Soluciones para cada operación.
+        </h2>
+      </div>
+
+
+      <p>
+        Encontramos la aplicación correcta para proteger
+        tus equipos y mantenerlos trabajando.
+      </p>
+
     </div>
+
+
+    <div
+      class="resultNote"
+      id="resultNote"
+      hidden
+    ></div>
+
+
+    <div
+      class="productGrid"
+      id="productGrid"
+    ></div>
+
   </section>
 
-  <!-- NOSOTROS -->
-  <section id="nosotros">
-    <h2>¿Quiénes somos?</h2>
-    <ul><p>En PETROMAQ somos una empresa boliviana especializada en la importación y distribución de filtros, grasas y lubricantes de alto rendimiento.</p>
-    <p>Nacimos con la misión de proveer soluciones técnicas confiables para el mantenimiento y la operación eficiente de motores y maquinaria en todo el país.</p>
-    <p>Trabajamos con marcas reconocidas internacionalmente y productos con certificaciones de calidad, pensados para responder a los desafíos del trabajo boliviano.</p><ul>
+
+  <!-- ================================================
+       CARRUSEL DE MARCAS
+  ================================================= -->
+
+  <section
+    class="brandsSection"
+    id="marcas"
+  >
+
+    <div class="brandsHead">
+
+      <div>
+        <span class="kicker">
+          NUESTRAS LÍNEAS
+        </span>
+
+        <h2>
+          Marcas que comercializamos.
+        </h2>
+      </div>
+
+
+      <div class="brandsControls">
+
+        <p>
+          Filtros, grasas y lubricantes seleccionados
+          para el trabajo boliviano.
+        </p>
+
+
+        <div>
+
+          <button
+            type="button"
+            data-scroll="brandsCarousel"
+            data-direction="-1"
+            aria-label="Marcas anteriores"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            data-scroll="brandsCarousel"
+            data-direction="1"
+            aria-label="Marcas siguientes"
+          >
+            →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- El JavaScript coloca aquí los logos -->
+
+    <div
+      class="brandsCarousel autoCarousel"
+      id="brandsCarousel"
+    ></div>
+
   </section>
 
-  <!-- PRODUCTOS -->
-  <section id="productos">
-    <h2>Nuestros productos</h2>
-    <ul>
-      <li>
-        <h3>Filtros de aire, aceite y combustible para camiones Volvo y otras marcas de transporte pesado</h3>
-        <p>Filtros de alto rendimiento compatibles con motores Volvo diésel utilizados en transporte pesado, larga distancia y logística. Disponibles para modelos F12, F16, FH, FM, NL y otras aplicaciones de carga.
-        <p>Garantizan máxima protección del motor, mayor eficiencia y vida útil prolongada incluso en condiciones severas de operación.
-        <p>También disponibles para maquinaria pesada, equipos industriales y vehículos livianos.</p>
-      </li>
-      <li>
-        <h3>Grasas industriales para equipos y camiones Volvo</h3>
-        <p>Grasas de alto desempeño diseñadas para componentes sometidos a cargas extremas, vibración, humedad y polvo. Ideales para sistemas de suspensión, rodamientos, chasis y maquinaria asociada al transporte pesado.
-        <p>Proporcionan excelente adhesión, protección contra desgaste y funcionamiento confiable en condiciones de trabajo exigentes.</p>
-      </li>
-      <li>
-        <h3>Lubricantes para todo tipo de motores diésel</h3>
-        <p>Aceites formulados para motores diésel de camiones Volvo y otras marcas de transporte pesado. Reducen fricción, controlan la temperatura y protegen componentes críticos durante operación continua.
-        <p>Permiten intervalos de mantenimiento más prolongados y mayor confiabilidad en rutas de larga distancia.</p>
-      </li>
-    </ul>
+
+  <!-- ================================================
+       EMPRESA
+  ================================================= -->
+
+  <section
+    class="darkSection"
+    id="empresa"
+  >
+
+    <div class="about">
+
+      <div>
+        <span class="kicker light">
+          QUIÉNES SOMOS
+        </span>
+
+        <h2>
+          Importamos confianza.<br>
+          Entregamos continuidad.
+        </h2>
+      </div>
+
+
+      <div>
+
+        <p>
+          PETROMAQ es una empresa boliviana especializada
+          en importación y distribución de filtros, grasas
+          y lubricantes de alto rendimiento.
+        </p>
+
+        <p>
+          Brindamos atención técnica para elegir el producto
+          correcto, con soluciones para las condiciones más
+          exigentes del trabajo boliviano.
+        </p>
+
+        <a
+          href="https://wa.me/59171644088"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Conocé cómo trabajamos →
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="stats">
+
+      <div>
+        <strong>9</strong>
+
+        <span>
+          departamentos<br>
+          con cobertura
+        </span>
+      </div>
+
+
+      <div>
+        <strong>3</strong>
+
+        <span>
+          líneas principales<br>
+          de producto
+        </span>
+      </div>
+
+
+      <div>
+        <strong>100%</strong>
+
+        <span>
+          enfoque en<br>
+          continuidad operativa
+        </span>
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- CLIENTES -->
-  <section id="clientes">
-    <h2>Nuestros clientes</h2>
-<ul>PETROMAQ abastece a organizaciones que operan equipos diésel y maquinaria en condiciones exigentes, donde la confiabilidad y la continuidad operativa son fundamentales.</ul>
-    <ul>
-      <li><p>Flotas de transporte y logística</p></li>
-      <li><p>Talleres mecánicos y servicios técnicos</p></li>
-      <li><p>Agroindustria y maquinaria agrícola</p></li>
-      <li><p>Sector minero, construcción y maquinaria pesada</p></li>
-      <li><p>Empresas de mantenimiento industrial</p></li>
-    </ul>
+
+  <!-- ================================================
+       CARRUSEL DE CLIENTES
+  ================================================= -->
+
+  <section
+    class="clientSection"
+    id="clientes"
+  >
+
+    <div class="clientIntro">
+
+      <div>
+        <span class="kicker">
+          PETROMAQ EN MOVIMIENTO
+        </span>
+
+        <h2>
+          Trabajo real.<br>
+          Clientes reales.
+        </h2>
+      </div>
+
+
+      <div class="carouselTools">
+
+        <p>
+          Entregas, visitas y soluciones que muestran
+          cómo acompañamos a quienes mueven Bolivia.
+        </p>
+
+
+        <div>
+
+          <button
+            type="button"
+            data-scroll="clientCarousel"
+            data-direction="-1"
+            aria-label="Fotografías anteriores"
+          >
+            ←
+          </button>
+
+          <button
+            type="button"
+            data-scroll="clientCarousel"
+            data-direction="1"
+            aria-label="Fotografías siguientes"
+          >
+            →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- El JavaScript coloca aquí las fotografías -->
+
+    <div
+      class="clientCarousel autoCarousel"
+      id="clientCarousel"
+    ></div>
+
+
+    <div class="carouselHint">
+      <span>Avance automático cada 5 segundos</span>
+      <i>01 — 06</i>
+    </div>
+
   </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📍 Av. Virgen de Cotoca 7mo Anillo, Pampa de la Isla (Cerca del Banco Sol) - Santa Cruz, Bolivia
-      <a href="https://maps.app.goo.gl/5sAGFv1X8zZ7gHzA9" target="_blank" rel="noopener" data-placement="maps">👉 Ver Ubicación</a>
-    </p>
-    <p>📍 Sobre el 4to anillo entre Radial 10 y San Aurelio (a lado de tienda 3b) - Santa Cruz, Bolivia
-      <a href="https://maps.app.goo.gl/iHGvkjSDoZWiz2mK7" target="_blank" rel="noopener" data-placement="maps">👉 Ver Ubicación</a>
-    </p>
-    <p>📞 WhatsApp:
-      <a href="https://wa.me/59174666430" target="_blank" rel="noopener" data-placement="footer">+591 74666430</a>
-      o
-      <a href="https://wa.me/59162111135" target="_blank" rel="noopener" data-placement="footer">+591 62111135</a>
-      o
-      <a href="https://wa.me/59171644088" target="_blank" rel="noopener" data-placement="footer">+591 71644088</a>
-    </p>
-    <p>✉️ Email: <a href="mailto:petromaqventas@gmail.com">petromaqventas@gmail.com</a></p>
+
+  <!-- ================================================
+       SECTORES
+  ================================================= -->
+
+  <section
+    class="section"
+    id="sectores"
+  >
+
+    <div class="sectionHead">
+
+      <div>
+        <span class="kicker">
+          DONDE TRABAJAMOS
+        </span>
+
+        <h2>
+          Hecho para Bolivia.
+        </h2>
+      </div>
+
+      <p>
+        Desde la ruta hasta el campo, la mina
+        y la planta industrial.
+      </p>
+
+    </div>
+
+
+    <div class="sectorGrid sectorGridDetailed">
+
+      <div>
+        <span>01</span>
+        <h3>Transporte pesado</h3>
+
+        <p>
+          Filtros de aire, aceite y combustible para
+          camiones, buses, flotas y operación de larga distancia.
+        </p>
+      </div>
+
+
+      <div>
+        <span>02</span>
+        <h3>Maquinaria pesada</h3>
+
+        <p>
+          Soluciones para construcción, movimiento de tierra
+          y trabajo continuo.
+        </p>
+      </div>
+
+
+      <div>
+        <span>03</span>
+        <h3>Agroindustria</h3>
+
+        <p>
+          Filtración y lubricación para tractores,
+          cosechadoras y maquinaria agrícola.
+        </p>
+      </div>
+
+
+      <div>
+        <span>04</span>
+        <h3>Minería</h3>
+
+        <p>
+          Protección para motores, sistemas hidráulicos
+          y componentes sometidos a carga.
+        </p>
+      </div>
+
+
+      <div>
+        <span>05</span>
+        <h3>Industria</h3>
+
+        <p>
+          Productos para mantenimiento preventivo
+          y continuidad industrial.
+        </p>
+      </div>
+
+
+      <div>
+        <span>06</span>
+        <h3>Talleres y flotas</h3>
+
+        <p>
+          Atención a talleres diésel, empresas,
+          mayoristas y particulares.
+        </p>
+      </div>
+
+    </div>
+
   </section>
 
-  <!-- FOOTER -->
+
+  <!-- ================================================
+       CONTENIDO SEO
+  ================================================= -->
+
+  <section class="seoSection">
+
+    <div class="seoLead">
+
+      <span class="kicker">
+        SOLUCIONES PETROMAQ
+      </span>
+
+      <h2>
+        Filtros, grasas y lubricantes
+        para trabajo exigente.
+      </h2>
+
+      <p>
+        PETROMAQ importa y distribuye productos de alto
+        rendimiento desde Santa Cruz, con atención técnica
+        y envíos a toda Bolivia.
+      </p>
+
+    </div>
+
+
+    <div class="seoArticles">
+
+      <article>
+        <span>01 / FILTRACIÓN</span>
+
+        <h3>
+          Filtros para transporte pesado y maquinaria
+        </h3>
+
+        <p>
+          Filtros de aire, aceite y combustible para Volvo
+          FH, F12, F10, F7, NL10, NL12, N10 y N12;
+          Scania, Mercedes-Benz y Renault Trucks.
+          También atendemos Caterpillar, New Holland
+          y John Deere.
+        </p>
+      </article>
+
+
+      <article>
+        <span>02 / PROTECCIÓN</span>
+
+        <h3>
+          Grasas para rodamientos, chasis e industria
+        </h3>
+
+        <p>
+          Grasas multipropósito y de trabajo pesado para
+          componentes sometidos a carga, vibración,
+          humedad y polvo.
+        </p>
+      </article>
+
+
+      <article>
+        <span>03 / LUBRICACIÓN</span>
+
+        <h3>
+          Lubricantes para motores diésel
+        </h3>
+
+        <p>
+          Lubricantes para transporte pesado, maquinaria
+          y flotas, con atención a empresas, talleres
+          y particulares.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       PREGUNTAS FRECUENTES
+  ================================================= -->
+
+  <section class="faqSection">
+
+    <div class="faqIntro">
+
+      <span class="kicker">
+        PREGUNTAS FRECUENTES
+      </span>
+
+      <h2>
+        Antes de cotizar.
+      </h2>
+
+      <p>
+        Información práctica para encontrar tu producto.
+      </p>
+
+    </div>
+
+
+    <div class="faqList">
+
+      <details>
+        <summary>
+          <span>01</span>
+          ¿Cómo encuentro el filtro correcto?
+          <b>+</b>
+        </summary>
+
+        <p>
+          Enviá el código, una fotografía legible,
+          la marca y modelo del equipo o los datos del motor.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          <span>02</span>
+          ¿Realizan envíos a toda Bolivia?
+          <b>+</b>
+        </summary>
+
+        <p>
+          Sí, despachamos pedidos a los nueve departamentos
+          de Bolivia, incluido Beni.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          <span>03</span>
+          ¿Atienden empresas y talleres?
+          <b>+</b>
+        </summary>
+
+        <p>
+          Sí. Atendemos flotas, talleres diésel,
+          agroindustria, minería, industria,
+          minoristas y mayoristas.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       CONTACTO
+  ================================================= -->
+
+  <section
+    class="contact"
+    id="contacto"
+  >
+
+    <div>
+
+      <span class="kicker">
+        COTIZÁ HOY
+      </span>
+
+      <h2>
+        Vos no parás.<br>
+        <em>Nosotros tampoco.</em>
+      </h2>
+
+      <p>
+        Mandanos el código, una fotografía
+        o los datos de tu equipo.
+      </p>
+
+    </div>
+
+
+    <div class="contactCard">
+
+      <h3 class="whatsappTitle">
+
+        <img
+          src="imagenes/whatsapp.png"
+          alt=""
+        >
+
+        HABLEMOS POR WHATSAPP
+
+      </h3>
+
+
+      <a
+        href="https://wa.me/59171644088"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <b>71644088</b>
+        <span>ATENCIÓN Y COTIZACIONES ↗</span>
+      </a>
+
+
+      <a
+        href="https://wa.me/59174666430"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <b>74666430</b>
+        <span>ATENCIÓN CORPORATIVA ↗</span>
+      </a>
+
+
+      <a
+        href="https://wa.me/59162111135"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <b>62111135</b>
+        <span>DISTRIBUIDORES Y MAYORISTAS ↗</span>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================================================
+       PIE DE PÁGINA
+  ================================================= -->
+
   <footer>
-    <p>&copy; 2025 PETROMAQ. Todos los derechos reservados.</p>
+
+    <div class="footerBrand">
+
+      <img
+        class="logoPetromaq"
+        src="imagenes/logo-petromaq.png"
+        alt="PETROMAQ"
+      >
+
+    </div>
+
+
+    <div>
+
+      <a
+        class="mapTitle"
+        href="https://maps.app.goo.gl/qaBSiumkeDSgrxco7?g_st=ic"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CENTRAL ↗
+      </a>
+
+      <span>
+        4to Anillo entre Radial 10 y Av. San Aurelio<br>
+        (A lado de Tienda 3B)<br>
+        Santa Cruz de la Sierra, Bolivia
+      </span>
+
+    </div>
+
+
+    <div>
+
+      <a
+        class="mapTitle"
+        href="https://maps.app.goo.gl/uhDcC7EnFqAH73xb7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        SUCURSAL 1 ↗
+      </a>
+
+      <span>
+        Av. Virgen de Cotoca Nº465, 7mo Anillo<br>
+        Santa Cruz de la Sierra, Bolivia
+      </span>
+
+    </div>
+
+
+    <div>
+
+      <b>HORARIO</b>
+
+      <span>
+        Lunes a sábado<br>
+        08:00–18:00 · Horario continuo
+      </span>
+
+      <a href="mailto:petromaqventas@gmail.com">
+        petromaqventas@gmail.com
+      </a>
+
+      <a href="https://www.petromaq.com.bo">
+        www.petromaq.com.bo
+      </a>
+
+
+      <div class="socialBlock">
+
+        <b>SEGUINOS EN REDES</b>
+
+
+        <div class="socialLinks">
+
+          <a
+            href="https://www.facebook.com/share/1BsKz8qZ87/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <img
+              src="imagenes/facebook.png"
+              alt="Facebook"
+            >
+          </a>
+
+
+          <a
+            href="https://www.instagram.com/petromaq.bolivia?igsh=aDFjN2pvNG01MXJw"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <img
+              src="imagenes/instagram.png"
+              alt="Instagram"
+            >
+          </a>
+
+
+          <a
+            href="https://www.tiktok.com/@petromaq.bolivia?_r=1&_t=ZS-98afnAr2FTJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok"
+          >
+            <img
+              src="imagenes/tiktok.png"
+              alt="TikTok"
+            >
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
   </footer>
 
-  <!-- Tracking de clics (WhatsApp + Ubicación) -->
-  <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    try {
-      // ---- WhatsApp (evento estándar + personalizado) ----
-      var waLinks = Array.prototype.slice.call(
-        document.querySelectorAll('a[href*="wa.me"], a[href*="api.whatsapp.com"]')
-      );
-      waLinks.forEach(function(link){
-        link.addEventListener('click', function(){
-          var href = link.getAttribute('href') || '';
-          var phoneMatch = href.match(/wa\.me\/(\d+)/) || href.match(/phone=(\d+)/);
-          var phone = phoneMatch ? phoneMatch[1] : 'unknown';
-          var placement = link.dataset.placement || 'unknown';
 
-          if (typeof fbq === 'function') {
-            // Evento estándar (sirve para optimizar campañas)
-            fbq('track','Contact');
-            // Evento personalizado (métricas detalladas)
-            fbq('trackCustom','WhatsAppClick', {
-              phone: phone,
-              placement: placement,
-              page: window.location.pathname
-            });
-          }
-        });
-      });
+  <!-- BOTÓN FLOTANTE DE WHATSAPP -->
 
-      // ---- Ver Ubicación (Google Maps) ----
-      var mapLinks = Array.prototype.slice.call(
-        document.querySelectorAll('a[href*="maps.app.goo.gl"], a[href*="google.com/maps"]')
-      );
-      mapLinks.forEach(function(link){
-        link.addEventListener('click', function(){
-          var placement = link.dataset.placement || 'maps';
-          if (typeof fbq === 'function') {
-            // Evento estándar recomendado por Meta para esto
-            fbq('track','FindLocation');
-            // Personalizado para análisis
-            fbq('trackCustom','MapClick', {
-              placement: placement,
-              page: window.location.pathname
-            });
-          }
-        });
-      });
+  <a
+    class="floatWa"
+    href="https://wa.me/59171644088"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Cotizar por WhatsApp"
+  >
+    <span>◔</span>
+    <b>Cotizar</b>
+  </a>
 
-    } catch(e) {
-      // Silenciar errores para no afectar la UI
-    }
-  });
-  </script>
+</main>
+
+
+<!-- Debe aparecer una sola vez -->
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
-
-
-
