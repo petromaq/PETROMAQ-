@@ -90,31 +90,6 @@ footer .logoPetromaq {
 .mapTitle:hover {
   color: #9c6900 !important;
 }
-/* Fotografía real de portada */
-.heroVisual {
-  background:
-    linear-gradient(rgba(243, 178, 34, 0.18), rgba(23, 23, 20, 0.28)),
-    url("imagenes/portada-petromaq.jpg") center center / cover no-repeat;
-}
-
-.heroVisual .machine,
-.heroVisual .filter,
-.heroVisual .oil {
-  display: none;
-}
-
-.heroVisual .coverage {
-  background: rgba(243, 178, 34, 0.92);
-  padding: 12px 16px;
-  border-left: 4px solid #171714;
-}
-
-/* Ajuste para celulares */
-@media (max-width: 600px) {
-  .heroVisual {
-    min-height: 420px;
-    background-position: 60% center;
-  }
 }
 .productIcon {
   width: 72px;
@@ -488,20 +463,62 @@ footer .logoPetromaq {
     width: 230px !important;
   }
 }
+
+/* =========================================
+   PORTADA CON IMAGEN REAL — CORREGIDA
+========================================= */
+
+.heroGrid {
+  min-height: 600px;
+  align-items: stretch;
+}
+
+.heroCopy {
+  min-height: 600px;
+}
+
 .heroVisual {
   position: relative;
   width: 100%;
-  min-height: 520px;
+  min-height: 600px;
   overflow: hidden;
+  background: #d8d2c5;
+}
+
+.heroVisual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      rgba(243, 178, 34, 0.04),
+      rgba(23, 23, 20, 0.08)
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent 0 60px,
+      rgba(0, 0, 0, 0.025) 60px 62px
+    );
 }
 
 .heroImage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   display: block;
   width: 100%;
   height: 100%;
-  min-height: 520px;
+  min-height: 0;
   object-fit: cover;
-  object-position: center;
+  object-position: center 38%;
+}
+
+.heroVisual .machine,
+.heroVisual .filter,
+.heroVisual .oil {
+  display: none !important;
 }
 
 .heroVisual .coverage {
@@ -509,4 +526,40 @@ footer .logoPetromaq {
   top: 34px;
   right: 34px;
   z-index: 2;
+  padding: 12px 16px;
+  border-left: 4px solid #171714;
+  background: rgba(243, 178, 34, 0.94);
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    min-height: 0;
+  }
+
+  .heroCopy {
+    min-height: 0;
+  }
+
+  .heroVisual {
+    min-height: 500px;
+  }
+
+  .heroImage {
+    object-position: center 32%;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroVisual {
+    min-height: 420px;
+  }
+
+  .heroImage {
+    object-position: 58% center;
+  }
+
+  .heroVisual .coverage {
+    top: 18px;
+    right: 16px;
+  }
 }
