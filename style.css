@@ -544,3 +544,104 @@ footer .logoPetromaq {
     right: 14px;
   }
 }
+/* =========================================
+   PORTADA PETROMAQ — IGUALAR ALTURA REAL
+========================================= */
+
+@media (min-width: 901px) {
+
+  .heroGrid {
+    position: relative !important;
+    display: block !important;
+    min-height: 0 !important;
+  }
+
+  .heroCopy {
+    width: 52.5% !important;
+    min-height: 0 !important;
+  }
+
+  .heroVisual {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+
+    width: 47.5% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+
+    overflow: hidden !important;
+
+    background:
+      linear-gradient(
+        rgba(243, 178, 34, 0.05),
+        rgba(23, 23, 20, 0.08)
+      ),
+      url("Portada PETROMAQ.png")
+      center 38% / cover no-repeat !important;
+  }
+
+  .heroImage {
+    display: none !important;
+  }
+
+  .heroVisual .coverage {
+    position: absolute !important;
+    top: 28px !important;
+    right: 28px !important;
+    z-index: 3 !important;
+  }
+}
+
+
+/* TABLET Y CELULAR */
+
+@media (max-width: 900px) {
+
+  .heroGrid {
+    position: static !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroCopy {
+    width: 100% !important;
+  }
+
+  .heroVisual {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    width: 100% !important;
+    height: 500px !important;
+    min-height: 500px !important;
+
+    background:
+      linear-gradient(
+        rgba(243, 178, 34, 0.05),
+        rgba(23, 23, 20, 0.08)
+      ),
+      url("Portada PETROMAQ.png")
+      center 32% / cover no-repeat !important;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .heroVisual {
+    height: 420px !important;
+    min-height: 420px !important;
+
+    background-position: 58% center !important;
+  }
+
+  .heroVisual .coverage {
+    top: 16px !important;
+    right: 14px !important;
+  }
+}
