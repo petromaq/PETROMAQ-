@@ -11,42 +11,42 @@ const products = [
     'Filtros para transporte pesado',
     'Aire · aceite · combustible',
     'Volvo, Scania, Mercedes-Benz y Renault Trucks',
-    'imagenes/productos/filtro-transporte.png'
+    'filtro-transporte.png'
   ],
   [
     'RACOR',
     'Trampas de combustible',
     'Separación de agua',
     'Transporte, agro y maquinaria pesada',
-    'imagenes/productos/trampa-combustible.png'
+    'trampa-combustible.png'
   ],
   [
     'HD',
     'Filtros para maquinaria',
     'Motor · hidráulico · cabina',
     'CAT, New Holland y John Deere',
-    'imagenes/productos/filtro-maquinaria.png'
+    'filtro-maquinaria.png'
   ],
   [
     'EP2 / EP3',
     'Grasas de alto desempeño',
     'Rodamientos · chasis',
     'Minería, industria y flotas',
-    'imagenes/productos/grasa.png'
+    'grasa.png'
   ],
   [
     'DIESEL',
     'Lubricantes',
     'Motores y transmisiones',
     'Operación continua y trabajo severo',
-    'imagenes/productos/lubricante.png'
+    'lubricante.png'
   ],
   [
     'IND',
     'Filtración industrial',
     'Polvo · proceso · compresores',
     'Industria, minería y construcción',
-    'imagenes/productos/filtro-industrial.png'
+    'filtro-industrial.png'
   ]
 ];
 
@@ -57,32 +57,32 @@ const products = [
 
 const clients = [
   [
-    'clientes/cliente-01.jpg',
+    'cliente-01.jpg',
     'Entrega a transporte pesado',
     'Filtros preparados para mantener la flota trabajando.'
   ],
   [
-    'clientes/cliente-02.jpg',
+    'cliente-02.jpg',
     'Atención directa',
     'Asesoramiento para encontrar la aplicación correcta.'
   ],
   [
-    'clientes/cliente-03.jpg',
+    'cliente-03.jpg',
     'Despachos a toda Bolivia',
     'Pedidos listos para llegar donde nuestros clientes operan.'
   ],
   [
-    'clientes/cliente-04.jpg',
+    'cliente-04.jpg',
     'Soluciones para maquinaria',
     'Filtración para trabajo pesado y condiciones exigentes.'
   ],
   [
-    'clientes/cliente-05.jpg',
+    'cliente-05.jpg',
     'Talleres y empresas',
     'Productos confiables para mantenimiento y continuidad.'
   ],
   [
-    'clientes/cliente-06.jpg',
+    'cliente-06.jpg',
     'Clientes PETROMAQ',
     'Relaciones construidas con atención, calidad y respuesta.'
   ]
@@ -94,14 +94,14 @@ const clients = [
 ===================================================== */
 
 const brands = [
-  ['marcas/Marca 01.png', 'Donaldson'],
-  ['marcas/Marca 02.png', 'MANN-FILTER'],
-  ['marcas/Marca 03.png', 'Hardman Filters'],
-  ['marcas/Marca 04.png', 'SF'],
-  ['marcas/Marca 05.png', 'MAQFIL Filters'],
-  ['marcas/Marca 06.png', 'Lubrax'],
-  ['marcas/Marca 07.png', 'Ipiranga'],
-  ['marcas/Marca 08.png', 'YPF']
+  ['Marca 01.png', 'Donaldson'],
+  ['Marca 02.png', 'MANN-FILTER'],
+  ['Marca 03.png', 'Hardman Filters'],
+  ['Marca 04.png', 'SF'],
+  ['Marca 05.png', 'MAQFIL Filters'],
+  ['Marca 06.png', 'Lubrax'],
+  ['Marca 07.png', 'Ipiranga'],
+  ['Marca 08.png', 'YPF']
 ];
 
 
