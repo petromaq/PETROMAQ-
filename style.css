@@ -1,236 +1,490 @@
-/* === CONFIGURACIÓN GENERAL === */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  color: #333;
-}
+:root{--y:#f3b222;--k:#171714;--bg:#f1efe8;--line:#d5d2c9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#1b1b18;font-family:Arial,sans-serif}a{text-decoration:none;color:inherit}.topbar{height:34px;background:var(--y);display:flex;justify-content:center;align-items:center;gap:7vw;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}.header{height:84px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:white;border-bottom:1px solid #ddd;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:11px;font-size:22px;font-weight:950;letter-spacing:-.05em}.brand>b,.brand b{color:#a97100}.brand small{display:block;font-size:7px;letter-spacing:.16em;color:#777}.brandMark{width:43px;height:43px;border-radius:6px;background:#111;color:white;display:grid;place-items:center;font-size:27px;font-weight:950;position:relative;overflow:hidden}.brandMark:after{content:"";position:absolute;width:38px;height:10px;border-radius:50%;background:var(--y);right:-13px;top:4px;transform:rotate(-30deg)}nav{display:flex;gap:32px;font-size:13px;font-weight:700}.headerCta{background:var(--k);color:white;padding:14px 18px;font-size:12px;font-weight:900}.headerCta span{color:var(--y);margin-left:12px}.hero{overflow:hidden}.heroGrid{display:grid;grid-template-columns:1.05fr .95fr;min-height:600px}.heroCopy{padding:70px 5vw 48px}.eyebrow,.kicker{font-size:11px;font-weight:950;letter-spacing:.18em}.eyebrow{display:flex;gap:10px;align-items:center}.eyebrow i{width:21px;height:4px;background:var(--y)}h1{font-size:clamp(56px,6.4vw,96px);line-height:.88;letter-spacing:-.065em;text-transform:uppercase;margin:28px 0 22px;font-weight:950}h1 em,.contact em{font-style:normal;color:#ac7400}.heroCopy>p{max-width:580px;font-size:18px;line-height:1.6;color:#55554f}.search{max-width:650px;margin-top:32px}.search label{font-size:11px;text-transform:uppercase;font-weight:900;letter-spacing:.13em}.search>div{height:62px;margin-top:10px;background:#fff;display:flex;align-items:center;border:2px solid var(--k);box-shadow:8px 8px 0 var(--y)}.search>div>span{font-size:27px;padding:0 16px}.search input{border:0;outline:0;flex:1;min-width:0;font-size:14px}.search button{align-self:stretch;border:0;background:var(--k);color:white;padding:0 24px;font-weight:900}.search button b{color:var(--y);margin-left:12px}.search small{display:block;margin-top:12px;color:#777}.heroLinks{display:flex;gap:28px;margin-top:32px;font-size:13px;font-weight:900}.heroLinks a:first-child{border-bottom:2px solid;padding-bottom:5px}.heroLinks span{margin-left:20px}.heroVisual{background:var(--y);position:relative;overflow:hidden}.heroVisual:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(120deg,transparent 0 60px,rgba(0,0,0,.04) 60px 62px)}.coverage{position:absolute;right:28px;top:27px;border-left:4px solid;padding-left:11px;display:flex;flex-direction:column;font-size:10px;letter-spacing:.12em}.coverage strong{font-size:20px;letter-spacing:-.03em}.coverage span{letter-spacing:0}.machine{position:absolute;width:400px;height:190px;right:2vw;top:92px;filter:drop-shadow(0 22px 16px #0004)}.machine:before{content:"PETROMAQ";position:absolute;right:40px;bottom:50px;background:#292a27;color:white;width:215px;height:72px;clip-path:polygon(0 0,100% 18%,92% 100%,5% 90%);display:grid;place-items:center;font-size:20px;font-weight:950}.wheel{position:absolute;width:86px;height:86px;background:#181816;border:15px solid #41413d;border-radius:50%;bottom:0;z-index:3;box-shadow:inset 0 0 0 7px #111}.w1{right:40px}.w2{right:232px}.cab{position:absolute;width:115px;height:110px;background:#272825;right:44px;bottom:70px;clip-path:polygon(12% 0,80% 0,100% 100%,0 100%)}.cab:after{content:"";position:absolute;background:#91a3a3;width:56px;height:42px;right:13px;top:12px;clip-path:polygon(0 0,83% 0,100% 100%,0 100%)}.boom{position:absolute;width:190px;height:28px;background:#272825;transform:rotate(-20deg);right:185px;top:39px}.bucket{position:absolute;width:70px;height:75px;background:#222;left:-14px;top:83px;clip-path:polygon(0 0,100% 30%,75% 100%,8% 86%)}.filter{position:absolute;background:#f2efe6;border:7px solid #dedbd1;box-shadow:0 20px 25px #0004}.filter:before{content:"";position:absolute;inset:12px 8px;background:repeating-linear-gradient(90deg,#c9c5ba 0 3px,#eeeae0 3px 8px)}.filter span{position:absolute;width:46px;height:46px;border:10px solid #222;border-radius:50%;top:-24px;left:calc(50% - 23px);background:#777;z-index:2}.f1{width:120px;height:150px;left:10%;bottom:100px;transform:rotate(-8deg)}.f2{width:90px;height:115px;left:33%;bottom:70px;transform:rotate(7deg)}.oil{position:absolute;width:115px;height:165px;background:#1a1a18;border-radius:6px 6px 14px 14px;right:12%;bottom:55px;color:white;display:grid;place-items:center;text-align:center;box-shadow:0 20px 25px #0004}.oil:before{content:"";position:absolute;right:18px;top:-17px;width:39px;height:19px;background:#111}.oil span{font-weight:950;font-size:18px}.oil b{color:var(--y)}.trust{min-height:70px;background:var(--k);color:white;display:flex;justify-content:center;align-items:center;gap:6vw;font-size:11px;letter-spacing:.12em}.trust span{color:#999}.trust b:before{content:"/";color:var(--y);margin-right:6vw}.section,.darkSection{padding:96px 5vw}.sectionHead{display:flex;justify-content:space-between;align-items:end;margin-bottom:48px}.sectionHead h2,.darkSection h2,.contact h2{font-size:clamp(38px,4vw,62px);line-height:.98;letter-spacing:-.05em;margin:13px 0 0}.sectionHead p{max-width:390px;color:#666;line-height:1.6}.kicker{color:#9c6900}.productGrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.productCard{background:white;min-height:330px;padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;transition:.2s}.productCard:hover{transform:translateY(-5px);box-shadow:0 16px 34px #0001;z-index:1}.productIcon{width:58px;height:58px;background:#eae7de;border-radius:50%;display:grid;place-items:center;font-size:27px}.productCode{position:absolute;right:25px;top:28px;color:#996600;font-size:11px;font-weight:900}.productCard h3{font-size:22px;margin:38px 0 8px}.productCard>b{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#956400}.productCard p{color:#777;line-height:1.5;font-size:14px}.productCard a{position:absolute;bottom:25px;font-size:12px;font-weight:900;border-bottom:1px solid}.productCard a span{color:#956400;margin-left:13px}.resultNote{background:#fff1c6;border-left:5px solid var(--y);padding:16px 20px;margin:-18px 0 28px;font-weight:700}.resultNote a{color:#805600}.darkSection{background:var(--k);color:white}.about{display:grid;grid-template-columns:1fr 1fr;gap:9vw}.kicker.light{color:var(--y)}.about p{font-size:17px;line-height:1.7;color:#b7b7b0}.about a{display:inline-block;margin-top:18px;color:var(--y);font-weight:800;border-bottom:1px solid}.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:72px;border-top:1px solid #444}.stats div{padding:34px 0;border-right:1px solid #444;display:flex;gap:20px;align-items:center}.stats strong{font-size:50px;color:var(--y)}.stats span{color:#aaa;font-size:11px;text-transform:uppercase;line-height:1.5}.sectorGrid{display:grid;grid-template-columns:repeat(3,1fr)}.sectorGrid div{height:175px;padding:24px;border:1px solid var(--line);margin:-1px 0 0 -1px;background:white;position:relative}.sectorGrid span{font-size:11px;color:#9c6900;font-weight:900}.sectorGrid h3{font-size:22px;margin-top:53px}.sectorGrid b{position:absolute;right:24px;bottom:24px;color:#9c6900}.contact{background:var(--y);padding:88px 8vw;display:grid;grid-template-columns:1.2fr .8fr;gap:8vw}.contact p{max-width:570px;line-height:1.6}.contactCard{background:var(--k);color:white;padding:30px;box-shadow:12px 12px 0 #ffffff70}.contactCard h3{margin:0 0 20px}.contactCard a{display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-top:1px solid #464640}.contactCard a b{font-size:21px}.contactCard a span{font-size:10px;color:var(--y)}footer{padding:52px 5vw;background:#f8f7f3;display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:42px;border-top:1px solid var(--line)}footer>div{display:flex;flex-direction:column;gap:9px;font-size:12px;line-height:1.6}footer>div>b{font-size:11px;text-transform:uppercase;letter-spacing:.12em}footer>div>span{color:#777}.footerBrand{flex-direction:row;align-items:center;font-size:22px!important}.floatWa{position:fixed;right:22px;bottom:20px;background:var(--k);color:white;padding:13px 18px;display:flex;gap:9px;align-items:center;z-index:20;box-shadow:0 8px 22px #0004}.floatWa span{color:var(--y);font-size:19px}.floatWa b{font-size:12px}
+@media(max-width:900px){.topbar span:not(:nth-child(2)),nav{display:none}.topbar{justify-content:center}.header{height:72px;padding:0 20px}.headerCta{font-size:0;padding:13px}.headerCta:before{content:"WhatsApp";font-size:11px}.headerCta span{font-size:11px;margin-left:7px}.heroGrid{grid-template-columns:1fr}.heroCopy{padding:50px 22px}.heroCopy h1{font-size:54px}.heroVisual{min-height:420px}.machine{transform:scale(.82);transform-origin:right top;right:-10px}.trust{overflow:auto;justify-content:flex-start;padding:0 22px;gap:30px;white-space:nowrap}.trust b:before{margin-right:30px}.section,.darkSection{padding:70px 22px}.sectionHead{display:block}.productGrid,.sectorGrid{grid-template-columns:1fr}.about,.contact{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stats div{border-right:0;border-bottom:1px solid #444}.contact{padding:70px 22px}.contactCard{padding:24px}footer{grid-template-columns:1fr;padding:48px 22px}.floatWa{border-radius:30px}.coverage{right:16px}.f1{left:8%}.f2{left:35%}}
+@media(max-width:440px){.brand{font-size:18px}.brandMark{width:37px;height:37px}.heroCopy h1{font-size:46px}.heroVisual{min-height:390px}.machine{transform:scale(.66);right:-36px}.f1{width:94px;height:124px}.f2{width:70px;height:95px}.oil{width:90px;height:135px;right:6%}.search>div>span{display:none}.search input{padding-left:12px;font-size:13px}.search button{padding:0 14px}.search button b{display:none}.heroLinks{justify-content:space-between;gap:10px}.productCard{min-height:310px}.contactCard a b{font-size:18px}.contactCard a span{max-width:90px;text-align:right}}
 
-/* === BARRA SUPERIOR === */
-.topbar {
-  background-color: #f4b221;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-bottom: 2px solid #000;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  height: 80px;
-}
+.clientSection{padding:100px 5vw;background:#fff}.clientIntro{display:flex;align-items:end;justify-content:space-between;margin-bottom:48px}.clientIntro h2{font-size:clamp(44px,5vw,72px);line-height:.94;text-transform:uppercase;margin:14px 0 0}.clientIntro>p{max-width:410px;color:#65655f;line-height:1.6}.clientGrid{display:grid;grid-template-columns:1.25fr .75fr 1fr;grid-template-rows:repeat(2,340px);gap:16px}.clientStory{position:relative;overflow:hidden;background:#eeece5}.clientStory1{grid-row:span 2}.clientPhoto{height:100%;background:#23231f;position:relative;background-size:cover;background-position:center;overflow:hidden}.clientPhoto:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.8))}.clientStory1 .clientPhoto:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(125deg,transparent 0 65px,rgba(243,178,34,.08) 65px 67px)}.photoNumber{position:absolute;top:18px;left:18px;color:var(--y);font-size:11px;font-weight:900;letter-spacing:.14em;z-index:2}.photoPlaceholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;gap:9px}.photoPlaceholder b{font-family:var(--font-anton),Impact,sans-serif;font-size:32px;font-weight:400;letter-spacing:.04em}.photoPlaceholder small{color:#aaa;font-size:11px;letter-spacing:.13em}.clientPhoto>i{position:absolute;right:18px;top:18px;color:#fff;font-size:9px;font-style:normal;letter-spacing:.14em;z-index:2}.storyCopy{position:absolute;left:0;right:0;bottom:0;color:#fff;padding:24px;z-index:2}.storyCopy h3{font-size:20px;margin:0 0 7px}.storyCopy p{font-size:12px;line-height:1.5;color:#d1d1ca;margin:0;max-width:300px}.photoHelp{margin-top:22px;border:1px solid var(--line);padding:18px 22px;display:flex;justify-content:space-between;gap:30px;font-size:12px}.photoHelp b{color:#946300;text-transform:uppercase;letter-spacing:.1em}.photoHelp span{color:#6f6f69}.clientStory:nth-child(2) .clientPhoto{background-color:#34342f}.clientStory:nth-child(3) .clientPhoto{background-color:#282824}.clientStory:nth-child(4) .clientPhoto{background-color:#3b3b36}.clientStory:nth-child(5) .clientPhoto{background-color:#20201d}.clientStory:nth-child(6){display:none}
+@media(max-width:900px){.clientSection{padding:70px 22px}.clientIntro{display:block}.clientIntro>p{margin-top:20px}.clientGrid{grid-template-columns:1fr 1fr;grid-template-rows:420px repeat(2,290px)}.clientStory1{grid-column:span 2;grid-row:auto}.clientStory6{display:block}.photoHelp{flex-direction:column;gap:8px}}
+@media(max-width:520px){.clientGrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:12px}.clientStory,.clientStory1,.clientStory6{display:block;min-width:82vw;height:430px;scroll-snap-align:start}.clientIntro h2{font-size:46px}.photoHelp{font-size:11px}}
 
-.logo img {
-  height: 140px;
+/* Carrusel de clientes: único agregado visual sobre el diseño original. */
+.clientIntro{align-items:flex-end}.carouselTools{max-width:430px}.carouselTools>p{color:#65655f;line-height:1.6;margin:0 0 18px}.carouselTools>div{display:flex;gap:8px;justify-content:flex-end}.carouselTools button{width:44px;height:44px;border:1px solid #bdb9ae;background:#fff;color:#171714;font-size:20px;cursor:pointer;transition:.2s}.carouselTools button:hover{background:var(--y);border-color:var(--y)}.clientCarousel{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 5vw 14px 0}.clientCarousel::-webkit-scrollbar{display:none}.clientCarousel .clientStory{display:block;flex:0 0 clamp(300px,34vw,480px);height:520px;scroll-snap-align:start;position:relative}.clientCarousel .clientPhoto{height:100%}.clientCarousel .photoPlaceholder b{font-family:Arial,sans-serif;font-size:28px;font-weight:900}.carouselHint{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);margin-top:18px;padding-top:15px;color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.14em}.carouselHint i{font-style:normal;color:#946300;font-weight:900}
+@media(max-width:900px){.clientIntro{display:block}.carouselTools{max-width:none}.carouselTools>div{justify-content:flex-start}.clientCarousel{margin-right:-22px;padding-right:22px}.clientCarousel .clientStory{flex-basis:75vw;height:460px}}
+@media(max-width:520px){.clientCarousel{display:flex;overflow-x:auto;gap:12px}.clientCarousel .clientStory{display:block;min-width:82vw;height:430px}.clientIntro h2{font-size:46px}.carouselTools button{width:42px;height:42px}}
+
+.brandsSection{padding:88px 5vw;background:#e7e4dc;border-top:1px solid var(--line);overflow:hidden}.brandsHead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:38px}.brandsHead h2{font-size:clamp(38px,4vw,60px);line-height:.98;letter-spacing:-.05em;margin:13px 0 0}.brandsControls{max-width:430px}.brandsControls>p{color:#65655f;line-height:1.6;margin:0 0 16px}.brandsControls>div{display:flex;justify-content:flex-end;gap:8px}.brandsControls button{width:44px;height:44px;border:1px solid #b9b5aa;background:#fff;font-size:20px;cursor:pointer;transition:.2s}.brandsControls button:hover{background:var(--y);border-color:var(--y)}.brandsCarousel{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 5vw 10px 0}.brandsCarousel::-webkit-scrollbar{display:none}.brandSlot{flex:0 0 260px;height:210px;background:#fff;border:1px solid #d2cec3;padding:18px;scroll-snap-align:start;position:relative}.brandSlot>span{position:absolute;left:17px;top:15px;font-size:10px;font-weight:900;color:#a06c00}.brandSlot>div{height:145px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;border-bottom:1px solid #e3e0d8}.brandSlot img{max-width:175px;max-height:95px;object-fit:contain}.brandSlot>div b{font-size:23px;color:#aaa;letter-spacing:.12em}.brandSlot>div small{font-size:9px;color:#999;letter-spacing:.1em}.brandSlot>p{margin:12px 0 0;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.14em;color:#8d6000}.brandsNote{display:flex;justify-content:space-between;border-top:1px solid #c9c5bb;margin-top:18px;padding-top:14px;font-size:10px;color:#777;text-transform:uppercase;letter-spacing:.13em}.brandsNote i{font-style:normal;color:#946300;font-weight:900}
+@media(max-width:900px){.brandsSection{padding:70px 22px}.brandsHead{display:block}.brandsControls{max-width:none;margin-top:20px}.brandsControls>div{justify-content:flex-start}.brandsCarousel{margin-right:-22px;padding-right:22px}.brandSlot{flex-basis:230px}}
+@media(max-width:520px){.brandsHead h2{font-size:40px}.brandSlot{flex-basis:76vw;height:205px}.brandsNote i{display:none}}
+
+.sectorGridDetailed div{height:245px}.sectorGridDetailed h3{margin:38px 0 12px}.sectorGridDetailed p{margin:0;max-width:330px;color:#6c6c66;font-size:13px;line-height:1.55}.seoSection{padding:100px 5vw;background:#fff;border-top:1px solid var(--line)}.seoLead{display:grid;grid-template-columns:.8fr 1.4fr .8fr;gap:4vw;align-items:start;margin-bottom:55px}.seoLead h2{font-size:clamp(38px,4vw,60px);line-height:1;letter-spacing:-.05em;margin:0}.seoLead>p{margin:0;color:#666;line-height:1.65}.seoArticles{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.seoArticles article{padding:30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.seoArticles article>span{font-size:10px;color:#946300;font-weight:900;letter-spacing:.13em}.seoArticles h3{font-size:23px;line-height:1.15;margin:30px 0 18px}.seoArticles p{font-size:14px;line-height:1.7;color:#666660}.faqSection{padding:96px 5vw;background:#e7e4dc;display:grid;grid-template-columns:.8fr 1.2fr;gap:8vw}.faqIntro h2{font-size:clamp(40px,4vw,58px);line-height:1;margin:14px 0 20px;letter-spacing:-.05em}.faqIntro p{max-width:360px;color:#666;line-height:1.6}.faqList{border-top:1px solid #bdb9ae}.faqList details{border-bottom:1px solid #bdb9ae}.faqList summary{list-style:none;cursor:pointer;min-height:76px;display:grid;grid-template-columns:48px 1fr 28px;align-items:center;font-size:15px;font-weight:800;gap:10px}.faqList summary::-webkit-details-marker{display:none}.faqList summary>span{font-size:10px;color:#946300}.faqList summary>b{font-size:22px;font-weight:400;transition:.2s}.faqList details[open] summary>b{transform:rotate(45deg)}.faqList details>p{margin:0;padding:0 45px 24px 58px;color:#5f5f59;font-size:14px;line-height:1.7}
+@media(max-width:900px){.sectorGridDetailed div{height:auto;min-height:210px}.seoSection{padding:72px 22px}.seoLead{grid-template-columns:1fr;gap:18px}.seoArticles{grid-template-columns:1fr}.faqSection{padding:72px 22px;grid-template-columns:1fr;gap:36px}}
+@media(max-width:520px){.seoLead h2{font-size:39px}.seoArticles article{padding:25px 22px}.faqList summary{grid-template-columns:35px 1fr 20px;font-size:14px}.faqList details>p{padding-left:45px;padding-right:15px}.sectorGridDetailed h3{margin-top:30px}}
+
+.autoCarousel{overscroll-behavior-inline:contain}.brandsCarousel.autoCarousel{scroll-snap-type:none}.autoCarousel:focus-within{outline:2px solid var(--y);outline-offset:4px}
+@media(prefers-reduced-motion:reduce){.autoCarousel{scroll-behavior:auto!important}.brandsControls button,.carouselTools button{transition:none}}
+.logoPetromaq {
+  width: 190px;
+  max-height: 58px;
   object-fit: contain;
+  display: block;
 }
 
-.nav-items {
+footer .logoPetromaq {
+  width: 170px;
+}
+
+@media (max-width: 600px) {
+  .logoPetromaq {
+    width: 145px;
+    max-height: 48px;
+  }
+}
+.logoPetromaq {
+  width: 190px;
+  height: auto;
+  max-height: 62px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .logoPetromaq {
+    width: 150px;
+    max-height: 50px;
+  }
+}
+.header {
+  height: 105px;
+}
+
+.logoPetromaq {
+  width: 280px !important;
+  height: auto !important;
+  max-height: none !important;
+  display: block;
+}
+
+footer .logoPetromaq {
+  width: 220px !important;
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 80px;
+  }
+
+  .logoPetromaq {
+    width: 190px !important;
+  }
+}
+.mapTitle {
+  color: #171714 !important;
+  font-size: 12px;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  width: fit-content;
+  border-bottom: 2px solid #f3b222;
+  padding-bottom: 3px;
+}
+
+.mapTitle:hover {
+  color: #9c6900 !important;
+}
+/* Fotografía real de portada */
+.heroVisual {
+  background:
+    linear-gradient(rgba(243, 178, 34, 0.18), rgba(23, 23, 20, 0.28)),
+    url("imagenes/portada-petromaq.jpg") center center / cover no-repeat;
+}
+
+.heroVisual .machine,
+.heroVisual .filter,
+.heroVisual .oil {
+  display: none;
+}
+
+.heroVisual .coverage {
+  background: rgba(243, 178, 34, 0.92);
+  padding: 12px 16px;
+  border-left: 4px solid #171714;
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+  .heroVisual {
+    min-height: 420px;
+    background-position: 60% center;
+  }
+}
+.productIcon {
+  width: 72px;
+  height: 72px;
+  padding: 10px;
+  background: #eae7de;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  gap: 20px;
-}
-
-.nav-items a {
-  color: #1f1f1f;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
-
-.nav-items a:hover {
-  color: #ff9900;
-}
-
-/* === MARCAS REPRESENTADAS === */
-.distribuidor-bar {
-  background-color: #fff;
-  padding: 30px 20px;
-  text-align: center;
-  border-bottom: 2px solid #ddd;
-}
-
-.distribuidor-bar .texto {
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.logos-marcas {
-  display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.logos-marcas img {
-  height: 200px;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logos-marcas img:hover {
-  transform: scale(1.1);
-}
-
-/* === SECCIONES GENERALES === */
-section {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: left;
-}
-
-h1 {
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left;
-  font-size: 20px;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-/* === HERO CON CARRUSEL === */
-.hero {
-  position: relative;
-  height: 50vh;
   overflow: hidden;
+}
+
+.productIcon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.productIcon {
+  width: 72px;
+  height: 72px;
+  padding: 0;
+  background: transparent !important;
+  border-radius: 0;
+  box-shadow: none !important;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: #000;
+  justify-content: center;
+  overflow: visible;
 }
 
-.carrusel-fondo {
-  position: absolute;
+.productIcon img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  box-shadow: none !important;
+}
+/* Carrusel de marcas sin rectángulos blancos */
+.brandSlot {
+  flex: 0 0 220px;
+  height: 160px;
+  padding: 12px;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   display: flex;
-  width: 400%;
-  height: 100%;
-  animation: mover-carrusel 30s infinite linear;
-  top: 0;
-  left: 0;
+  align-items: center;
+  justify-content: center;
 }
 
-.carrusel-fondo img {
-  width: 100vw;
-  height: 100%;
-  object-fit: cover;
-  flex-shrink: 0;
+.brandSlot img {
+  width: 150px;
+  height: 120px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-@keyframes mover-carrusel {
-  0%   { transform: translateX(0); }
-  25%  { transform: translateX(-100vw); }
-  50%  { transform: translateX(-200vw); }
-  75%  { transform: translateX(-300vw); }
-  100% { transform: translateX(0); }
+/* Eliminar información inferior */
+.brandsNote {
+  display: none !important;
 }
 
-.hero-overlay {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 40px;
-  border-radius: 10px;
-  max-width: 700px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  z-index: 2;
-  text-align: center;
+@media (max-width: 600px) {
+  .brandSlot {
+    flex-basis: 170px;
+    height: 130px;
+    padding: 8px;
+  }
+
+  .brandSlot img {
+    width: 130px;
+    height: 100px;
+  }
+}
+/* MARCAS SIN RECTÁNGULOS */
+.brandsSection {
+  padding-top: 65px;
+  padding-bottom: 65px;
 }
 
-.hero-overlay h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #222;
+.brandsCarousel {
+  gap: 38px;
+  align-items: center;
+  padding: 15px 0;
 }
 
-.hero-overlay p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: #333;
+.brandSlot {
+  flex: 0 0 220px;
+  height: 145px;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
-/* === BOTÓN LLAMADO A LA ACCIÓN === */
-.boton {
-  background-color: #ff9900;
-  color: #fff;
-  padding: 12px 25px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 16px;
-  transition: background-color 0.3s ease;
+.brandSlot img {
+  width: 190px;
+  height: 125px;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
 }
 
-.boton:hover {
-  background-color: #cc7a00;
+/* Disimula el fondo blanco de Donaldson y SF */
+.brandSlot:nth-child(8n + 1) img,
+.brandSlot:nth-child(8n + 4) img {
+  mix-blend-mode: multiply;
 }
 
-/* === FOOTER === */
-footer {
-  background-color: #1f1f1f;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+/* Ocultar información inferior */
+.brandsNote {
+  display: none !important;
 }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .topbar {
+@media (max-width: 600px) {
+  .brandsCarousel {
+    gap: 24px;
+  }
+
+  .brandSlot {
+    flex-basis: 170px;
+    height: 115px;
+  }
+
+  .brandSlot img {
+    width: 150px;
+    height: 95px;
+  }
+}
+/* Título WhatsApp */
+.whatsappTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  font-size: 18px !important;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.whatsappTitle img {
+  width: 27px;
+  height: 27px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* Filas de contacto */
+.contactCard a {
+  min-height: 78px;
+  gap: 25px;
+}
+
+/* Números más pequeños */
+.contactCard a b {
+  font-size: 18px !important;
+  letter-spacing: 0.03em;
+}
+
+/* Tipo de atención más grande */
+.contactCard a span {
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: right;
+  color: #f3b222;
+}
+
+@media (max-width: 600px) {
+  .whatsappTitle {
+    font-size: 16px !important;
+  }
+
+  .contactCard a {
+    align-items: flex-start;
     flex-direction: column;
-    height: auto;
-    padding: 10px;
+    gap: 7px;
   }
 
-  .logo img {
-    height: 50px;
+  .contactCard a span {
+    text-align: left;
+  }
+}
+/* REDES SOCIALES */
+.socialBlock {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.socialBlock > b {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 9px;
+}
+
+.socialLinks a {
+  width: 36px;
+  height: 36px;
+  background: #171714;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.socialLinks a:hover {
+  background: #f3b222;
+  transform: translateY(-3px);
+}
+
+.socialLinks img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.socialLinks a:hover img {
+  filter: brightness(0);
+}
+/* Corregir tamaño de los íconos sociales */
+.socialBlock {
+  display: block !important;
+  margin-top: 16px;
+}
+
+.socialBlock > b {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.socialLinks {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Funciona incluso si faltó el contenedor socialLinks */
+.socialBlock a {
+  width: 32px !important;
+  height: 32px !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6px;
+  background: #171714;
+  overflow: hidden;
+}
+
+/* Forzar íconos pequeños */
+.socialBlock img,
+.socialLinks img {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px !important;
+  max-width: 16px !important;
+  min-height: 16px !important;
+  max-height: 16px !important;
+  object-fit: contain !important;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+/* =========================================
+   PIE DE PÁGINA CORREGIDO
+========================================= */
+
+footer {
+  grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+  align-items: center;
+  gap: 55px;
+}
+
+/* Logo PETROMAQ más grande y centrado */
+.footerBrand {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center;
+}
+
+footer .logoPetromaq {
+  width: 270px !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* Redes sociales */
+.socialBlock {
+  display: block !important;
+  margin-top: 20px;
+}
+
+.socialBlock > b {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+}
+
+.socialLinks {
+  display: flex !important;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Quitar cuadrados negros y blancos */
+.socialBlock a,
+.socialLinks a {
+  width: 27px !important;
+  height: 27px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* Mostrar correctamente los íconos */
+.socialBlock img,
+.socialLinks img {
+  width: 25px !important;
+  height: 25px !important;
+  min-width: 25px !important;
+  max-width: 25px !important;
+  min-height: 25px !important;
+  max-height: 25px !important;
+  object-fit: contain !important;
+  filter: none !important;
+  mix-blend-mode: multiply;
+  display: block;
+}
+
+.socialLinks a:hover {
+  transform: translateY(-3px);
+}
+
+/* Ajuste para celular */
+@media (max-width: 900px) {
+  footer {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 35px;
   }
 
-  .nav-items {
-    gap: 10px;
-    margin-top: 10px;
+  .footerBrand {
+    justify-content: flex-start !important;
   }
 
-  .hero-overlay {
-    padding: 20px;
-  }
-
-  .hero-overlay h2 {
-    font-size: 28px;
-  }
-
-  .hero-overlay p {
-    font-size: 16px;
-  }
-
-  .boton {
-    padding: 10px 18px;
-    font-size: 14px;
-  }
-
-  .logos-marcas {
-    gap: 20px;
-  }
-
-  .logos-marcas img {
-    height: 40px;
-  }
-
-  section {
-    padding: 30px 15px;
+  footer .logoPetromaq {
+    width: 230px !important;
   }
 }
