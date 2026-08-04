@@ -90,7 +90,6 @@ footer .logoPetromaq {
 .mapTitle:hover {
   color: #9c6900 !important;
 }
-}
 .productIcon {
   width: 72px;
   height: 72px;
@@ -465,12 +464,15 @@ footer .logoPetromaq {
 }
 
 /* =========================================
-   PORTADA CON IMAGEN REAL — CORREGIDA
+   PORTADA PETROMAQ — SOLUCIÓN ÚNICA
+   No requiere modificar el HTML
 ========================================= */
 
 .heroGrid {
-  min-height: 600px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: stretch;
+  min-height: 600px;
 }
 
 .heroCopy {
@@ -479,60 +481,44 @@ footer .logoPetromaq {
 
 .heroVisual {
   position: relative;
-  width: 100%;
+  align-self: stretch;
   min-height: 600px;
   overflow: hidden;
-  background: #d8d2c5;
-}
-
-.heroVisual::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
   background:
     linear-gradient(
-      rgba(243, 178, 34, 0.04),
+      rgba(243, 178, 34, 0.05),
       rgba(23, 23, 20, 0.08)
     ),
-    repeating-linear-gradient(
-      120deg,
-      transparent 0 60px,
-      rgba(0, 0, 0, 0.025) 60px 62px
-    );
+    url("Portada PETROMAQ.png") center 38% / cover no-repeat;
 }
 
+/* La fotografía ya se muestra como fondo para ocupar toda la columna */
 .heroImage {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  object-fit: cover;
-  object-position: center 38%;
+  display: none !important;
 }
 
+/* Ocultar los dibujos antiguos */
 .heroVisual .machine,
 .heroVisual .filter,
 .heroVisual .oil {
   display: none !important;
 }
 
+/* Etiqueta de cobertura */
 .heroVisual .coverage {
   position: absolute;
-  top: 34px;
-  right: 34px;
-  z-index: 2;
+  top: 28px;
+  right: 28px;
+  z-index: 3;
   padding: 12px 16px;
   border-left: 4px solid #171714;
   background: rgba(243, 178, 34, 0.94);
 }
 
+/* Tablet */
 @media (max-width: 900px) {
   .heroGrid {
+    grid-template-columns: 1fr;
     min-height: 0;
   }
 
@@ -542,371 +528,19 @@ footer .logoPetromaq {
 
   .heroVisual {
     min-height: 500px;
-  }
-
-  .heroImage {
-    object-position: center 32%;
-  }
-}
-
-@media (max-width: 600px) {
-  .heroVisual {
-    min-height: 420px;
-  }
-
-  .heroImage {
-    object-position: 58% center;
-  }
-
-  .heroVisual .coverage {
-    top: 18px;
-    right: 16px;
-  }
-}
-/* =========================================
-   CORRECCIÓN FINAL DE LA PORTADA
-========================================= */
-
-.heroGrid {
-  min-height: 0 !important;
-  align-items: stretch !important;
-}
-
-.heroCopy {
-  min-height: 0 !important;
-}
-
-.heroVisual {
-  position: relative !important;
-  width: 100% !important;
-  height: 560px !important;
-  min-height: 560px !important;
-  max-height: 560px !important;
-  overflow: hidden !important;
-  background: #d8d2c5 !important;
-}
-
-.heroImage {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 0 !important;
-  max-height: none !important;
-  display: block !important;
-  object-fit: cover !important;
-  object-position: center 32% !important;
-}
-
-/* Mantener la cobertura encima de la fotografía */
-.heroVisual .coverage {
-  position: absolute !important;
-  top: 28px !important;
-  right: 28px !important;
-  z-index: 3 !important;
-}
-
-/* Tablet */
-@media (max-width: 900px) {
-  .heroVisual {
-    height: 480px !important;
-    min-height: 480px !important;
-    max-height: 480px !important;
-  }
-
-  .heroImage {
-    object-position: center 30% !important;
+    background-position: center 32%;
   }
 }
 
 /* Celular */
 @media (max-width: 600px) {
   .heroVisual {
-    height: 400px !important;
-    min-height: 400px !important;
-    max-height: 400px !important;
-  }
-
-  .heroImage {
-    object-position: 58% center !important;
+    min-height: 420px;
+    background-position: 58% center;
   }
 
   .heroVisual .coverage {
-    top: 16px !important;
-    right: 14px !important;
-  }
-}
-/* =========================================
-   PORTADA: MISMA ALTURA EN COMPUTADORA
-========================================= */
-
-.heroGrid {
-  display: grid !important;
-  grid-template-columns: 1.05fr 0.95fr !important;
-  align-items: stretch !important;
-  min-height: 600px !important;
-}
-
-.heroCopy {
-  min-height: 600px !important;
-}
-
-.heroVisual {
-  position: relative !important;
-  width: 100% !important;
-
-  height: auto !important;
-  min-height: 100% !important;
-  max-height: none !important;
-
-  overflow: hidden !important;
-  align-self: stretch !important;
-}
-
-.heroImage {
-  position: absolute !important;
-  inset: 0 !important;
-
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-
-  min-height: 0 !important;
-  max-height: none !important;
-
-  object-fit: cover !important;
-  object-position: center center !important;
-}
-
-/* Etiqueta de cobertura */
-.heroVisual .coverage {
-  position: absolute !important;
-  top: 28px !important;
-  right: 28px !important;
-  z-index: 3 !important;
-}
-
-/* Tablet y celular */
-@media (max-width: 900px) {
-  .heroGrid {
-    grid-template-columns: 1fr !important;
-    min-height: 0 !important;
-  }
-
-  .heroCopy {
-    min-height: 0 !important;
-  }
-
-  .heroVisual {
-    height: 500px !important;
-    min-height: 500px !important;
-  }
-
-  .heroImage {
-    object-position: center center !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .heroVisual {
-    height: 420px !important;
-    min-height: 420px !important;
-  }
-
-  .heroImage {
-    object-position: 58% center !important;
-  }
-
-  .heroVisual .coverage {
-    top: 16px !important;
-    right: 14px !important;
-  }
-}
-/* =========================================
-   PORTADA PETROMAQ — CORRECCIÓN DEFINITIVA
-========================================= */
-
-.heroGrid {
-  display: grid !important;
-  grid-template-columns: 1.05fr 0.95fr !important;
-  grid-auto-rows: 1fr !important;
-  align-items: stretch !important;
-  min-height: 600px !important;
-}
-
-.heroCopy {
-  min-height: 600px !important;
-}
-
-.heroVisual {
-  position: relative !important;
-  align-self: stretch !important;
-
-  width: 100% !important;
-  height: 100% !important;
-  min-height: 600px !important;
-  max-height: none !important;
-
-  overflow: hidden !important;
-  background: #d8d2c5 !important;
-}
-
-.heroImage {
-  position: absolute !important;
-  inset: 0 !important;
-
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-
-  min-height: 0 !important;
-  max-height: none !important;
-
-  object-fit: cover !important;
-  object-position: center center !important;
-}
-
-/* Elimina cualquier portada antigua puesta como fondo */
-.heroVisual {
-  background-image: none !important;
-}
-
-/* Trama muy suave sobre la fotografía */
-.heroVisual::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  pointer-events: none !important;
-
-  background:
-    linear-gradient(
-      rgba(243, 178, 34, 0.04),
-      rgba(23, 23, 20, 0.08)
-    ) !important;
-}
-
-/* Ocultar dibujos antiguos */
-.heroVisual .machine,
-.heroVisual .filter,
-.heroVisual .oil {
-  display: none !important;
-}
-
-/* Cobertura nacional */
-.heroVisual .coverage {
-  position: absolute !important;
-  top: 28px !important;
-  right: 28px !important;
-  z-index: 3 !important;
-
-  padding: 12px 16px !important;
-  border-left: 4px solid #171714 !important;
-  background: rgba(243, 178, 34, 0.94) !important;
-}
-
-/* TABLET */
-@media (max-width: 900px) {
-
-  .heroGrid {
-    grid-template-columns: 1fr !important;
-    grid-auto-rows: auto !important;
-    min-height: 0 !important;
-  }
-
-  .heroCopy {
-    min-height: 0 !important;
-  }
-
-  .heroVisual {
-    height: 500px !important;
-    min-height: 500px !important;
-  }
-
-  .heroImage {
-    object-position: center center !important;
-  }
-}
-
-/* CELULAR */
-@media (max-width: 600px) {
-
-  .heroVisual {
-    height: 420px !important;
-    min-height: 420px !important;
-  }
-
-  .heroImage {
-    object-position: 58% center !important;
-  }
-
-  .heroVisual .coverage {
-    top: 16px !important;
-    right: 14px !important;
-  }
-}
-/* ARREGLO DEFINITIVO: PORTADA A LA MISMA ALTURA DEL TEXTO */
-
-.heroGrid {
-  display: grid !important;
-  grid-template-columns: 1.05fr 0.95fr !important;
-  align-items: stretch !important;
-}
-
-.heroVisual {
-  position: relative !important;
-  align-self: stretch !important;
-
-  height: auto !important;
-  min-height: 0 !important;
-  max-height: none !important;
-
-  overflow: hidden !important;
-  background-image: none !important;
-}
-
-.heroImage {
-  position: absolute !important;
-  inset: 0 !important;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  min-height: 0 !important;
-  max-height: none !important;
-
-  display: block !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-}
-
-/* Mantener la etiqueta encima */
-.heroVisual .coverage {
-  position: absolute !important;
-  top: 28px !important;
-  right: 28px !important;
-  z-index: 5 !important;
-}
-
-/* CELULAR */
-@media (max-width: 900px) {
-  .heroGrid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .heroVisual {
-    height: 480px !important;
-    min-height: 480px !important;
-  }
-
-  .heroImage {
-    object-position: 58% center !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .heroVisual {
-    height: 400px !important;
-    min-height: 400px !important;
+    top: 16px;
+    right: 14px;
   }
 }
