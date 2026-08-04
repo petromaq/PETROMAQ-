@@ -563,3 +563,76 @@ footer .logoPetromaq {
     right: 16px;
   }
 }
+/* =========================================
+   CORRECCIÓN FINAL DE LA PORTADA
+========================================= */
+
+.heroGrid {
+  min-height: 0 !important;
+  align-items: stretch !important;
+}
+
+.heroCopy {
+  min-height: 0 !important;
+}
+
+.heroVisual {
+  position: relative !important;
+  width: 100% !important;
+  height: 560px !important;
+  min-height: 560px !important;
+  max-height: 560px !important;
+  overflow: hidden !important;
+  background: #d8d2c5 !important;
+}
+
+.heroImage {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center 32% !important;
+}
+
+/* Mantener la cobertura encima de la fotografía */
+.heroVisual .coverage {
+  position: absolute !important;
+  top: 28px !important;
+  right: 28px !important;
+  z-index: 3 !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .heroVisual {
+    height: 480px !important;
+    min-height: 480px !important;
+    max-height: 480px !important;
+  }
+
+  .heroImage {
+    object-position: center 30% !important;
+  }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+  .heroVisual {
+    height: 400px !important;
+    min-height: 400px !important;
+    max-height: 400px !important;
+  }
+
+  .heroImage {
+    object-position: 58% center !important;
+  }
+
+  .heroVisual .coverage {
+    top: 16px !important;
+    right: 14px !important;
+  }
+}
