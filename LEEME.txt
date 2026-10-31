@@ -1,0 +1,10 @@
+PETROMAQ - VITE
+
+1. Ejecutar npm install y npm run dev.
+2. La URL hardcodeada y la ruta pública están en src/constants.js.
+3. El endpoint no requiere credenciales: la empresa y el usuario lógico publico se fijan en el backend.
+4. Editar imágenes, marcas y clientes dentro de public/.
+5. Ejecutar npm run build y publicar el contenido de dist/.
+6. Consultar README.md para la conexión y el estado de la prueba real.
+
+Los resultados muestran imagen, nombre de factura y Precio 1.

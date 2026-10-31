@@ -1,0 +1,172 @@
+/* Componentes interactivos: buscador, resultados y detalle. */
+.searchPanel { display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 310px); align-items: center; gap: 32px; margin-bottom: 32px; padding: 32px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--y); border-radius: var(--radius); box-shadow: var(--shadow); }
+.search { min-width: 0; }
+.search label { display: block; margin-bottom: 12px; font-size: 12px; font-weight: 600; }
+.search > div { display: flex; align-items: center; min-height: 56px; overflow: hidden; border: 1px solid #9ea28f; border-radius: var(--radius); background: var(--paper); }
+.search > div:focus-within { outline: 2px solid var(--amber-ink); outline-offset: 3px; }
+.search > div > span { padding-left: 16px; color: var(--muted); font-size: 24px; }
+.search input { flex: 1; min-width: 0; width: 100%; padding: 16px 12px; border: 0; outline: 0; background: transparent; color: var(--k); font-size: 15px; line-height: 1.4; }
+.search input::placeholder { color: #767a6c; opacity: 1; }
+.search button { align-self: stretch; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 14px 24px; border: 0; border-left: 1px solid #d39a16; background: var(--y); color: var(--k); font-size: 14px; font-weight: 600; }
+.search button:hover { background: #e9a817; }
+.search button:active { background: #db9c0d; }
+.search button b { font-size: 20px; font-weight: 400; }
+.search small { display: block; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.searchHelp { display: flex; justify-content: space-between; align-items: center; gap: 16px; min-height: 56px; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: #f8f8f3; font-size: 13px; font-weight: 500; line-height: 1.55; }
+.searchHelp > span { color: var(--amber-ink); font-size: 20px; }
+.searchHelp:hover { border-color: #ad955a; background: #fff9e9; }
+.resultNote { margin-bottom: 20px; padding: 16px 20px; border: 1px solid #e5d3a3; border-radius: var(--radius); background: #fff8e5; color: #624a15; font-size: 14px; line-height: 1.6; overflow-wrap: anywhere; }
+.resetSearch { display: block; margin: 0 0 24px; padding: 4px 0; background: none; border: 0; border-bottom: 1px solid #a6a996; color: var(--k); font-size: 13px; font-weight: 500; }
+.resetSearch:hover { color: var(--amber-ink); border-color: var(--amber-ink); }
+.searchResult { min-width: 0; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: border-color .18s, box-shadow .18s; }
+.searchResult:hover { border-color: #c2a45f; box-shadow: var(--shadow); }
+.resultOpen { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0; border: 0; background: transparent; color: var(--k); text-align: left; }
+.resultOpen:focus-visible { outline-offset: -4px; }
+.resultImage { display: flex; flex-shrink: 0; align-items: center; justify-content: center; width: 100%; height: 250px; padding: 28px; background: #f9f9f5; color: var(--muted); font-size: 13px; }
+.resultImage img { width: 100%; height: 100%; object-fit: contain; }
+.resultTitle { display: block; flex: 1; padding: 24px 24px 16px; font-size: 17px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; }
+.resultPrice { display: block; padding: 0 24px 24px; color: var(--amber-ink); font-size: 24px; line-height: 1.3; font-weight: 600; font-variant-numeric: tabular-nums; }
+.loadMore { display: flex; margin: 32px auto 0; }
+.productGrid[aria-busy='true']:empty { min-height: 200px; border: 1px dashed #b8bca9; border-radius: var(--radius); background: var(--soft); }
+.productGrid[aria-busy='true']:empty::after { content: 'Consultando el catálogo…'; justify-self: center; align-self: center; grid-column: 1 / -1; padding: 32px; color: var(--muted); font-size: 14px; }
+
+.productModal { width: min(960px, calc(100vw - 48px)); max-height: calc(100dvh - 48px); padding: 0; border: 1px solid var(--line); border-top: 4px solid var(--y); border-radius: var(--radius); background: var(--paper); color: var(--k); box-shadow: 0 24px 90px rgb(0 0 0 / 22%); }
+.productModal::backdrop { background: rgb(23 23 20 / 66%); }
+.modalLayout { display: grid; grid-template-columns: 1.05fr 1fr; }
+.modalImage { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 450px; padding: 40px; background: #f7f7f1; color: var(--muted); font-size: 14px; }
+.modalImage img { width: 100%; height: 380px; object-fit: contain; }
+.modalCopy { min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 64px 36px 40px; }
+.modalCopy h2 { margin: 20px 0 0; font-size: clamp(30px, 3vw, 42px); line-height: 1.15; overflow-wrap: anywhere; }
+.modalPrice { margin: 28px 0; color: var(--amber-ink); font-size: 28px; font-weight: 600; }
+.modalQuote { width: 100%; }
+.modalClose { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #b5b9a9; border-radius: var(--radius); background: var(--paper); color: var(--k); font-size: 25px; line-height: 1; z-index: 1; }
+.modalClose:hover { background: var(--soft); }
+body.modalOpen { overflow: hidden; }
+
+/* Adaptación progresiva sin cambiar ni ocultar los íconos de las categorías. */
+@media (min-width: 1600px) {
+  .heroCopy { padding-right: 72px; }
+}
+@media (max-width: 1150px) {
+  .header { gap: 20px; }
+  .header .logoPetromaq { width: 190px; }
+  .header nav { gap: 16px; }
+  .header nav a { font-size: 12px; }
+  .headerCta { padding-inline: 18px; }
+  .heroGrid { min-height: 560px; }
+  .searchPanel { grid-template-columns: minmax(0, 1fr) 265px; gap: 24px; padding: 28px; }
+  footer { grid-template-columns: 1fr 1fr; gap: 40px 64px; }
+  .stats { gap: 24px; }
+  .stats > div { gap: 16px; }
+}
+@media (max-width: 900px) {
+  :root { --header-height: 80px; }
+  .topbar { justify-content: center; }
+  .topbar span:not(:nth-child(2)) { display: none; }
+  .header .logoPetromaq { width: 190px; }
+  .menuToggle { display: flex; align-items: center; gap: 10px; margin-left: auto; min-height: 44px; padding: 10px 14px; border: 1px solid #babfaf; border-radius: var(--radius); background: transparent; color: var(--k); font-size: 13px; font-weight: 500; }
+  .menuToggle:hover { background: var(--soft); }
+  .header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 16px var(--gutter) 24px; background: var(--paper); border-bottom: 2px solid var(--y); box-shadow: var(--shadow); }
+  .header nav.isOpen { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 24px; }
+  .header nav a { min-height: 48px; padding-block: 14px; font-size: 14px; border-bottom: 1px solid var(--line); }
+  .headerCta { min-height: 44px; }
+  .heroGrid { grid-template-columns: 1fr; }
+  .heroCopy { padding: 56px var(--gutter); }
+  .heroCopy h1 { font-size: clamp(54px, 8vw, 78px); }
+  .heroCopy > p { max-width: 580px; }
+  .heroVisual { min-height: 440px; background-position: center 45%; }
+  .trust { gap: 28px; overflow-x: auto; justify-content: start; padding-block: 22px; }
+  .sectionHead, .brandsHead, .clientIntro { align-items: start; gap: 28px; flex-direction: column; margin-bottom: 32px; }
+  .sectionHead > p, .brandsControls > p, .carouselTools > p { max-width: 540px; }
+  .brandsControls, .carouselTools { flex-basis: auto; width: 100%; }
+  .brandsControls > div, .carouselTools > div { justify-content: start; }
+  .searchPanel { grid-template-columns: 1fr; gap: 24px; }
+  .searchHelp { min-height: 48px; padding: 14px 18px; }
+  .productGrid, .sectorGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .productCard { padding: 24px; }
+  .productCode { top: 24px; }
+  .about { gap: 40px; }
+  .stats strong { font-size: 54px; }
+  .stats span { font-size: 11px; }
+  .stats > div { flex-wrap: wrap; gap: 16px; }
+  .seoLead { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .seoLead > .kicker { grid-column: 1 / -1; }
+  .seoArticles article { padding-inline: 24px; }
+  .faqSection { gap: 40px; grid-template-columns: 1fr; }
+  .faqIntro p { max-width: none; margin: 0; }
+  .contact { gap: 40px; grid-template-columns: 1fr; }
+  .contactCard { max-width: 600px; width: 100%; }
+  .contactCard > a span { max-width: none; }
+  .modalImage { min-height: 380px; padding: 28px; }
+  .modalImage img { height: 330px; }
+  .modalCopy { padding: 60px 28px 32px; }
+}
+@media (max-width: 600px) {
+  .header { gap: 10px; }
+  .header .logoPetromaq { width: 155px; }
+  .headerCta { gap: 12px; padding: 10px 14px; font-size: 12px; }
+  .headerCta span { display: none; }
+  .menuToggle { padding: 10px 12px; font-size: 12px; }
+  .heroCopy { padding-block: 44px 48px; }
+  .heroCopy h1 { font-size: clamp(48px, 10.5vw, 64px); }
+  .heroCopy > p { font-size: 16px; }
+  .heroSearchLink { justify-content: space-between; width: 100%; padding-inline: 20px; font-size: 14px; }
+  .heroLinks { gap: 16px 24px; justify-content: space-between; font-size: 12px; }
+  .heroVisual { min-height: 360px; }
+  .coverage { right: 20px; bottom: 20px; padding: 16px 20px; max-width: calc(100% - 40px); }
+  .coverage strong { font-size: 27px; }
+  .trust { gap: 24px; }
+  .trust b { gap: 20px; }
+  .searchPanel { padding: 24px 18px; }
+  .search > div > span { display: none; }
+  .search input { padding-inline: 12px; font-size: 16px; }
+  .search button { gap: 10px; padding-inline: 18px; font-size: 13px; }
+  .search button b { display: none; }
+  .searchHelp { font-size: 12px; }
+  .search small { font-size: 11px; }
+  .productGrid, .sectorGrid { grid-template-columns: 1fr; }
+  .productCard { min-height: 340px; }
+  .productCard h3 { font-size: 28px; }
+  .resultImage { height: 250px; }
+  .brandSlot { flex-basis: 155px; height: 110px; }
+  .brandSlot img { width: 140px; height: 90px; }
+  .brandsCarousel { gap: 24px; }
+  .clientStory { flex-basis: 84%; height: 420px; }
+  .storyCopy { padding: 24px; }
+  .carouselHint { font-size: 10px; }
+  .about { grid-template-columns: 1fr; gap: 28px; }
+  .about p { font-size: 16px; }
+  .stats { grid-template-columns: 1fr; gap: 0; margin-top: 36px; }
+  .stats > div { flex-wrap: nowrap; gap: 24px; padding-block: 24px; border-bottom: 1px solid #45483b; }
+  .stats strong { min-width: 110px; }
+  .stats span { font-size: 12px; }
+  .seoLead { grid-template-columns: 1fr; }
+  .seoArticles { grid-template-columns: 1fr; }
+  .seoArticles article, .seoArticles article:first-child, .seoArticles article:last-child { padding: 28px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+  .faqList summary { grid-template-columns: 24px 1fr 20px; gap: 10px; font-size: 14px; }
+  .faqList details > p { padding-left: 34px; }
+  .contactCard { padding: 24px; }
+  .contactCard > a { min-height: 88px; }
+  .contactCard > a b { font-size: 19px; }
+  .contactCard > a span { max-width: 140px; font-size: 9px; }
+  .whatsappTitle { font-size: 11px; }
+  footer { grid-template-columns: 1fr; padding-bottom: 96px; gap: 32px; }
+  .footerBrand { padding: 0; margin-bottom: 8px; }
+  .footerBrand .logoPetromaq { width: 210px; }
+  .floatWa { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); padding-inline: 18px; }
+  .productModal { width: calc(100vw - 24px); max-height: calc(100dvh - 24px); }
+  .modalLayout { grid-template-columns: 1fr; }
+  .modalImage { min-height: 220px; padding: 28px; }
+  .modalImage img { height: 240px; }
+  .modalCopy { padding: 28px 24px; }
+}
+@media (max-width: 370px) {
+  .header { gap: 8px; }
+  .header .logoPetromaq { width: 128px; }
+  .headerCta { padding-inline: 12px; }
+  .menuToggle { padding-inline: 8px; gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
