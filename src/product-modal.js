@@ -1,4 +1,5 @@
 import { Constants } from './constants.js';
+import { createImageZoom } from './image-zoom.js';
 
 export const formatPrice = value => value === null ? 'Precio a consultar'
   : `Bs ${new Intl.NumberFormat('es-BO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value)}`;
@@ -11,6 +12,7 @@ export function productUrl(secu) {
 }
 
 export function createProductModal() {
+  const imageZoom = createImageZoom();
   const dialog = document.createElement('dialog');
   dialog.className = 'productModal';
   dialog.setAttribute('aria-labelledby', 'productModalTitle');
@@ -22,6 +24,7 @@ export function createProductModal() {
     </div></div>`;
   document.body.append(dialog);
   dialog.addEventListener('close', () => {
+    imageZoom.close();
     document.body.classList.remove('modalOpen');
     const url = new URL(location.href);
     url.searchParams.delete('articulo');
@@ -36,11 +39,23 @@ export function createProductModal() {
     const media = dialog.querySelector('.modalImage');
     media.replaceChildren();
     if (product.image) {
+      const enlarge = document.createElement('button');
+      enlarge.type = 'button';
+      enlarge.className = 'modalEnlarge';
+      enlarge.setAttribute('aria-label', 'Ampliar imagen del producto');
+      enlarge.setAttribute('aria-haspopup', 'dialog');
+      enlarge.disabled = true;
       const image = document.createElement('img');
       image.src = product.image;
       image.alt = product.description;
+      image.addEventListener('load', () => { enlarge.disabled = false; }, { once: true });
       image.addEventListener('error', () => { media.textContent = 'Imagen no disponible'; }, { once: true });
-      media.append(image);
+      const hint = document.createElement('span');
+      hint.className = 'modalZoomHint';
+      hint.textContent = 'Ampliar imagen +';
+      enlarge.append(image, hint);
+      enlarge.addEventListener('click', () => imageZoom.open(product.image, product.description));
+      media.append(enlarge);
     } else media.textContent = 'Imagen no disponible';
     dialog.querySelector('h2').textContent = product.description;
     dialog.querySelector('.modalPrice').textContent = formatPrice(product.price);

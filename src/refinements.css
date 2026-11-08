@@ -35,6 +35,10 @@
 .modalLayout { display: grid; grid-template-columns: 1.05fr 1fr; }
 .modalImage { display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 450px; padding: 40px; background: #f7f7f1; color: var(--muted); font-size: 14px; }
 .modalImage img { width: 100%; height: 380px; object-fit: contain; }
+.modalEnlarge { display: grid; justify-items: center; gap: 16px; width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; color: var(--amber-ink); cursor: zoom-in; }
+.modalEnlarge:disabled { opacity: 1; }
+.modalZoomHint { display: inline-flex; align-items: center; min-height: 36px; padding: 4px 14px; border: 1px solid var(--line); border-radius: 30px; background: var(--paper); font-size: 13px; font-weight: 600; }
+.modalEnlarge:hover .modalZoomHint { border-color: var(--amber-ink); background: #fff8e5; }
 .modalCopy { min-width: 0; display: flex; flex-direction: column; justify-content: center; padding: 64px 36px 40px; }
 .modalCopy h2 { margin: 20px 0 0; font-size: clamp(30px, 3vw, 42px); line-height: 1.15; overflow-wrap: anywhere; }
 .modalPrice { margin: 28px 0; color: var(--amber-ink); font-size: 28px; font-weight: 600; }
@@ -42,6 +46,27 @@
 .modalClose { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #b5b9a9; border-radius: var(--radius); background: var(--paper); color: var(--k); font-size: 25px; line-height: 1; z-index: 1; }
 .modalClose:hover { background: var(--soft); }
 body.modalOpen { overflow: hidden; }
+
+/* Visor a pantalla completa, con zoom y desplazamiento táctil. */
+.imageZoom { position: fixed; inset: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; margin: 0; padding: 0; overflow: hidden; border: 0; background: var(--paper); color: var(--k); }
+.imageZoom[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.imageZoom::backdrop { background: var(--k); }
+.zoomHeader { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: max(20px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) 20px max(24px, env(safe-area-inset-left)); border-bottom: 1px solid var(--line); }
+.zoomHeader > div { min-width: 0; }
+.zoomHeader h2 { margin: 4px 0 0; font-size: clamp(21px, 2.5vw, 30px); overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.zoomClose, .zoomControls button { display: grid; place-items: center; flex-shrink: 0; min-width: 44px; height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--k); font-size: 26px; line-height: 1; }
+.zoomClose:hover, .zoomControls button:hover:not(:disabled) { background: var(--soft); border-color: #ad955a; }
+.zoomViewport { position: relative; min-width: 0; min-height: 0; overflow: hidden; background: #f7f7f1; touch-action: none; user-select: none; }
+.zoomViewport img { position: absolute; top: 50%; left: 50%; max-width: none; object-fit: contain; pointer-events: none; }
+.zoomViewport.isZoomed { cursor: grab; }
+.zoomViewport.isZoomed.isDragging { cursor: grabbing; }
+.zoomViewport:focus-visible { outline-offset: -4px; }
+.zoomError { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: var(--muted); }
+.zoomFooter { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px 28px; padding: 16px 16px max(16px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); }
+.zoomControls { display: flex; align-items: center; gap: 8px; }
+.zoomControls output { min-width: 60px; text-align: center; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.zoomControls .zoomReset { font-size: 13px; font-weight: 600; background: var(--y); border-color: var(--y); }
+.zoomFooter p { margin: 0; max-width: 340px; color: var(--muted); font-size: 12px; text-align: center; line-height: 1.5; }
 
 /* Adaptación progresiva sin cambiar ni ocultar los íconos de las categorías. */
 @media (min-width: 1600px) {
@@ -159,6 +184,8 @@ body.modalOpen { overflow: hidden; }
   .modalImage { min-height: 220px; padding: 28px; }
   .modalImage img { height: 240px; }
   .modalCopy { padding: 28px 24px; }
+  .zoomHeader { gap: 16px; padding-inline: 16px; }
+  .zoomHeader .kicker { font-size: 9px; }
 }
 @media (max-width: 370px) {
   .header { gap: 8px; }

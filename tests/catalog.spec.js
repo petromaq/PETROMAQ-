@@ -28,7 +28,7 @@ test('el formato se adapta a móvil y escritorio, con recursos y navegación fun
 });
 
 test('el buscador público pagina y muestra imagen, nombre y Precio 1 sin interpretar HTML', async ({ page }) => {
-  await page.route('http://localhost:1360/**', async route => {
+  await page.route('https://omnidata.click/**', async route => {
     const url = new URL(route.request().url());
     expect(route.request().headers().empresaid).toBeUndefined();
     expect(route.request().headers().userid).toBeUndefined();
@@ -71,7 +71,7 @@ test('el buscador público pagina y muestra imagen, nombre y Precio 1 sin interp
 });
 
 test('una falla del servidor ofrece contacto y permite volver al catálogo', async ({ page }) => {
-  await page.route('http://localhost:1360/**', route => route.fulfill({ status: 503, json: { message: 'No disponible' }, headers: { 'access-control-allow-origin': '*' } }));
+  await page.route('https://omnidata.click/**', route => route.fulfill({ status: 503, json: { message: 'No disponible' }, headers: { 'access-control-allow-origin': '*' } }));
   await page.goto('/');
   await page.locator('#filter-search').fill('Racor');
   await page.locator('#searchForm').getByRole('button').click();
@@ -107,7 +107,7 @@ test('el modal amplía la imagen y prepara la cotización con nombre de factura,
   const code = 'FH/001 & Ñ';
   const fullName = 'Filtro completo para maquinaria pesada con todos sus datos y especificaciones & aplicación';
   const invoiceName = 'Filtro hidráulico de factura';
-  await page.route('http://localhost:1360/**', async route => {
+  await page.route('https://omnidata.click/**', async route => {
     const url = new URL(route.request().url());
     if (url.pathname.includes('/imagenes/')) return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.png', contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } });
     if (url.searchParams.has('secu')) expect(url.searchParams.get('secu')).toBe(secu);
