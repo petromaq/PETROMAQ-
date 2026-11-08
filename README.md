@@ -24,7 +24,8 @@ GitHub Actions compila y publica automáticamente los cambios de `main` en GitHu
 La clase `Constants` de `src/constants.js` centraliza la URL hardcodeada del servidor y la ruta:
 
 - URL pública: `https://omnidata.click`.
-- Búsqueda: `GET /api/v1/publico/catalogo/buscar/59e2f2e2-4a68-4a8a-913b-755ee212ad4c?q=filtro&pagina=1`.
+- Base pública de la API: `https://omnidata.click/app/api/v1`.
+- Búsqueda: `GET /app/api/v1/publico/catalogo/buscar/59e2f2e2-4a68-4a8a-913b-755ee212ad4c?q=filtro&pagina=1`.
 - Sin headers `empresaid` ni `userid`, sin contraseñas o credenciales del ERP.
 - El servidor fija internamente el EID `59e2f2e2-4a68-4a8a-913b-755ee212ad4c` y el identificador lógico `publico`.
 - El identificador `publico` se rechaza en las rutas internas del ERP; no se crea una cuenta de usuario de base de datos.
@@ -69,7 +70,7 @@ Al pulsar un resultado se abre un modal con imagen ampliada, nombre de factura y
 
 Al pulsar la imagen del modal se abre un visor de pantalla completa. Permite ampliar hasta 4× con botones, rueda del mouse o pinza con dos dedos, y arrastrar la imagen ampliada. También admite las teclas `+`, `−`, flechas y `0` para restablecer. Cerrar el visor o pulsar Escape devuelve el foco al detalle y conserva el enlace del artículo. Cada imagen nueva comienza ajustada a la pantalla.
 
-“Cotizar por WhatsApp” prepara un mensaje con “Código interno” (el valor de `InventarioItems_Secu`), nombre de factura, Precio 1 y enlace al artículo. El usuario confirma el envío en WhatsApp. El enlace utiliza `?articulo=SECU#buscador`; al abrirlo se recupera el artículo mediante `GET /api/v1/publico/catalogo/buscar/{eid}?secu=SECU`. Se valida que Secu sea un entero positivo de hasta diez dígitos y el artículo esté vigente dentro del EID habilitado. La búsqueda normal por código o nombre sigue usando `q`.
+“Cotizar por WhatsApp” prepara un mensaje con “Código interno” (el valor de `InventarioItems_Secu`), nombre de factura, Precio 1 y enlace al artículo. El usuario confirma el envío en WhatsApp. El enlace utiliza `?articulo=SECU#buscador`; al abrirlo se recupera el artículo mediante `GET /app/api/v1/publico/catalogo/buscar/{eid}?secu=SECU`. Se valida que Secu sea un entero positivo de hasta diez dígitos y el artículo esté vigente dentro del EID habilitado. La búsqueda normal por código o nombre sigue usando `q`.
 
 La dirección compartida toma el dominio donde se abre la página. En desarrollo contiene localhost; para compartir enlaces accesibles desde otros equipos se debe utilizar la web publicada. No se envían mensajes automáticamente.
 
