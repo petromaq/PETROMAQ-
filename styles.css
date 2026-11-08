@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap');
-
 /* Identidad y escala visual compartidas por toda la página. */
 :root {
   --y: #f3b222;
@@ -12,8 +10,8 @@
   --soft: #eeeee7;
   --radius: 6px;
   --shadow: 0 8px 28px rgb(23 23 20 / 6%);
-  --font-body: 'Barlow', 'Segoe UI', sans-serif;
-  --font-heading: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: Arial, sans-serif;
+  --font-heading: var(--font-body);
   --gutter: clamp(20px, 5vw, 80px);
   --section-space: clamp(64px, 7vw, 104px);
   --content-pad: max(var(--gutter), calc((100vw - 1280px) / 2));
@@ -70,7 +68,7 @@ section[id], #buscador { scroll-margin-top: calc(var(--header-height) + 24px); }
 .heroLinks a { padding-bottom: 4px; border-bottom: 1px solid #b4b6aa; }
 .heroLinks a:hover { color: var(--amber-ink); border-color: var(--amber-ink); }
 .heroLinks a span { padding-left: 16px; }
-.heroVisual { position: relative; min-width: 0; background: linear-gradient(0deg, rgb(23 23 20 / 30%), transparent 65%), url('/imagenes/portada-petromaq.jpg') center / cover no-repeat; }
+.heroVisual { position: relative; min-width: 0; background: linear-gradient(0deg, rgb(23 23 20 / 30%), transparent 65%), url('/imagenes/portada-petromaq.webp') center / cover no-repeat; }
 .heroVisual .machine, .heroVisual .filter, .heroVisual .oil { display: none; }
 .coverage { position: absolute; right: 32px; bottom: 32px; max-width: calc(100% - 64px); padding: 20px 24px; border-left: 3px solid var(--y); border-radius: 0 var(--radius) var(--radius) 0; background: rgb(23 23 20 / 92%); color: var(--paper); }
 .coverage b { display: block; color: var(--y); font-size: 10px; font-weight: 600; letter-spacing: .16em; }

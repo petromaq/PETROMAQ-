@@ -33,7 +33,8 @@ test('el buscador público pagina y muestra imagen, nombre y Precio 1 sin interp
     expect(route.request().headers().empresaid).toBeUndefined();
     expect(route.request().headers().userid).toBeUndefined();
     if (url.pathname.includes('/imagenes/')) {
-      return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.png', contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } });
+      expect(url.pathname).toBe('/app/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2');
+      return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.webp', contentType: 'image/webp', headers: { 'access-control-allow-origin': '*' } });
     }
     expect(url.pathname).toBe('/api/v1/publico/catalogo/buscar/59e2f2e2-4a68-4a8a-913b-755ee212ad4c');
     const query = url.searchParams.get('q');
@@ -42,7 +43,7 @@ test('el buscador público pagina y muestra imagen, nombre y Precio 1 sin interp
       status: 'ok',
       response: query === 'inexistente' ? [] : [{
         descripcion: secondPage ? 'Segundo filtro' : 'Filtro hidráulico <img src=x onerror=alert(1)>',
-        imagen: `/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2`,
+        imagen: `${secondPage ? '/app' : ''}/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2`,
         precio: 918273,
         precio1: secondPage ? 0 : 125.5,
       }],
@@ -55,6 +56,7 @@ test('el buscador público pagina y muestra imagen, nombre y Precio 1 sin interp
   await expect(page.locator('.searchResult')).toHaveCount(1);
   await expect(page.locator('.searchResult')).toContainText('<img src=x onerror=alert(1)>');
   await expect(page.locator('.searchResult img')).toHaveCount(1);
+  await expect(page.locator('.searchResult img')).toHaveAttribute('src', 'https://omnidata.click/app/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2');
   await expect(page.locator('.searchResult [onerror]')).toHaveCount(0);
   await expect(page.locator('#productGrid')).not.toContainText('918273');
   await expect(page.locator('.resultPrice')).toHaveText(/Bs\s125[,.]50/);
@@ -109,7 +111,7 @@ test('el modal amplía la imagen y prepara la cotización con nombre de factura,
   const invoiceName = 'Filtro hidráulico de factura';
   await page.route('https://omnidata.click/**', async route => {
     const url = new URL(route.request().url());
-    if (url.pathname.includes('/imagenes/')) return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.png', contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } });
+    if (url.pathname.includes('/imagenes/')) return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.webp', contentType: 'image/webp', headers: { 'access-control-allow-origin': '*' } });
     if (url.searchParams.has('secu')) expect(url.searchParams.get('secu')).toBe(secu);
     expect(url.searchParams.has('codigo')).toBe(false);
     return route.fulfill({ json: { status: 'ok', response: [{ secu, codigo: code, nombreCompleto: fullName, descripcion: invoiceName, imagen: '/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2', precio1: 125.5 }], siguientePagina: null }, headers: { 'access-control-allow-origin': '*' } });
@@ -123,6 +125,7 @@ test('el modal amplía la imagen y prepara la cotización con nombre de factura,
   const dialog = page.getByRole('dialog');
   await expect(dialog).toBeVisible();
   await expect(dialog.locator('img')).toHaveAttribute('alt', invoiceName);
+  await expect(dialog.locator('img')).toHaveAttribute('src', 'https://omnidata.click/app/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2');
   await expect(dialog).toContainText(invoiceName);
   await expect(dialog).not.toContainText(fullName);
   await expect(dialog).not.toContainText(code);

@@ -4,7 +4,10 @@ async function prepareCatalog(page) {
   await page.route('https://omnidata.click/**', route => {
     const url = new URL(route.request().url());
     if (url.pathname.endsWith('/sin-imagen')) return route.fulfill({ status: 404, headers: { 'access-control-allow-origin': '*' } });
-    if (url.pathname.includes('/imagenes/')) return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.png', contentType: 'image/png', headers: { 'access-control-allow-origin': '*' } });
+    if (url.pathname.includes('/imagenes/')) {
+      expect(url.pathname).toBe('/app/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2');
+      return route.fulfill({ path: 'public/imagenes/productos/filtro-transporte.webp', contentType: 'image/webp', headers: { 'access-control-allow-origin': '*' } });
+    }
     const imagePath = '/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/';
     const products = [
       { secu: '101', descripcion: 'Filtro de factura', imagen: `${imagePath}2`, precio1: 125.5 },
@@ -30,6 +33,7 @@ test('el visor permite zoom, desplazamiento y teclado sin perder el detalle ni l
   const level = viewer.locator('output');
   await expect(viewer).toBeVisible();
   await expect(viewer.locator('img')).toHaveAttribute('alt', 'Filtro de factura');
+  await expect(viewer.locator('img')).toHaveAttribute('src', 'https://omnidata.click/app/api/v1/publico/catalogo/imagenes/59e2f2e2-4a68-4a8a-913b-755ee212ad4c/2');
   await expect(level).toHaveText('100%');
   await expect(viewer.getByRole('button', { name: 'Alejar imagen' })).toBeDisabled();
   await viewer.getByRole('button', { name: 'Acercar imagen' }).click();

@@ -4,7 +4,11 @@ export function safeImageUrl(value, baseUrl = Constants.API_BASE_URL) {
   if (typeof value !== 'string' || !value.trim()) return '';
   try {
     const url = new URL(value, baseUrl);
-    return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
+    if (!['http:', 'https:'].includes(url.protocol)) return '';
+    if (url.origin === new URL(baseUrl).origin && url.pathname.startsWith('/api/v1/publico/catalogo/imagenes/')) {
+      url.pathname = `${Constants.PRODUCT_IMAGE_PREFIX}${url.pathname}`;
+    }
+    return url.href;
   } catch { return ''; }
 }
 

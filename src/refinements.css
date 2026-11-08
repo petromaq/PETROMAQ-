@@ -188,6 +188,7 @@ body.modalOpen { overflow: hidden; }
   .zoomHeader .kicker { font-size: 9px; }
 }
 @media (max-width: 370px) {
+  .heroCopy h1 { font-size: 40px; }
   .header { gap: 8px; }
   .header .logoPetromaq { width: 128px; }
   .headerCta { padding-inline: 12px; }
