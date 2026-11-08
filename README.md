@@ -15,6 +15,8 @@ npm run preview
 
 La vista de desarrollo está en http://127.0.0.1:5173. Para publicar, subir el contenido de `dist/`. Editar los recursos en `public/imagenes`, `public/marcas` y `public/clientes`.
 
+GitHub Actions compila y publica automáticamente los cambios de `main` en GitHub Pages mediante `.github/workflows/deploy.yml`. Pages debe usar GitHub Actions como origen. El dominio `petromaq.com.bo` se conserva en `public/CNAME` y se incluye en la compilación.
+
 ## Buscador público de NuevoServidorDatasoft
 
 La clase `Constants` de `src/constants.js` centraliza la URL hardcodeada del servidor y la ruta:
